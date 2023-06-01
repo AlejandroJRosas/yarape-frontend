@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "name": "Administración de Empresas",
+    "soloCcs": false
+  },
+  {
+    "id": "2",
+    "name": "Contaduría Pública",
+    "soloCcs": false
+  },
+  {
+    "id": "3",
+    "name": "Relaciones Industriales",
+    "soloCcs": false
+  },
+  {
+    "id": "4",
+    "name": "Sociología",
+    "soloCcs": true
+  },
+  {
+    "id": "5",
+    "name": "Economía",
+    "soloCcs": true
+  },
+  {
+    "id": "6",
+    "name": "Derecho",
+    "soloCcs": false
+  },
+  {
+    "id": "7",
+    "name": "Letras",
+    "soloCcs": true
+  },
+  {
+    "id": "8",
+    "name": "Psicología",
+    "soloCcs": true
+  },
+  {
+    "id": "9",
+    "name": "Filosofía",
+    "soloCcs": true
+  },
+  {
+    "id": "10",
+    "name": "Comunicación Social",
+    "soloCcs": false
+  },
+  {
+    "id": "11",
+    "name": "Ingeniería en Telecomunicaciones",
+    "soloCcs": true
+  },
+  {
+    "id": "12",
+    "name": "Ingeniería Civil",
+    "soloCcs": false
+  },
+  {
+    "id": "13",
+    "name": "Ingeniería Industrial",
+    "soloCcs": false
+  },
+  {
+    "id": "14",
+    "name": "Ingeniería Informática",
+    "soloCcs": false
+  },
+  {
+    "id": "15",
+    "name": "Arquitectura",
+    "soloCcs": true
+  },
+  {
+    "id": "16",
+    "name": "Teología",
+    "soloCcs": true
+  }
+]

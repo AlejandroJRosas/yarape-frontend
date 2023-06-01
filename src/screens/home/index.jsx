@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 
 import h1 from '../../assets/homeAssets/h1.png'
-import h2 from '../../assets/homeAssets/h2.jpg'
+import h2 from '../../assets/homeAssets/h2.jpeg'
 import h3 from '../../assets/homeAssets/h3.jpg'
 import NavBar from './NavBar'
 
@@ -38,7 +38,7 @@ const Home = () => {
             <Link
               to='/form'
               className={clsx(
-                'text-white py-2 px-8 rounded-xl text-2xl font-semibold tracking-wide bg-GreenPalette cursor-pointer inline-flex items-center justify-center isolate transition ',
+                'text-white py-2 px-8 rounded-xl text-2xl font-semibold tracking-wide bg-GreenPalette cursor-pointer inline-flex items-center justify-center transition ',
                 '',
                 'hover:bg-[#2db946] hover:shadow-xl outline-none ring-GreenPalette ring-offset-2 focus-visible:ring-2 focus:scale-[0.95]',
                 'disabled:bg-green-500/50 disabled:cursor-not-allowed disabled:shadow'
@@ -77,8 +77,7 @@ const Home = () => {
             <img
               src={h2}
               className={clsx(
-                'w-full h-full object-cover object-center rounded-full',
-                'md'
+                'w-full h-full object-cover object-center rounded-full'
               )}
             />
           </div>

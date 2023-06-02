@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import food from '../../assets/categories/food.jpg'
+import food from '../../../assets/categories/food.jpg'
 
 const TransitionForm = () => {
   return (

@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 
-import h1 from '../../assets/homeAssets/h1.png'
-import h2 from '../../assets/homeAssets/h2.jpeg'
-import h3 from '../../assets/homeAssets/h3.jpg'
+import h1 from '../../../assets/homeAssets/h1.png'
+import h2 from '../../../assets/homeAssets/h2.jpeg'
+import h3 from '../../../assets/homeAssets/h3.jpg'
 import NavBar from './NavBar'
 
 const Home = () => {
   return (
     <>
       {/* MainPage */}
-      <div className={clsx('flex flex-col w-full h-screen relative')}>
+      <div className={clsx('flex flex-col h-screen relative')}>
         <NavBar />
         <div className={clsx('flex w-full h-full')}>
           <div

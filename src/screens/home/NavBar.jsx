@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import logo from '../../assets/logo.png'
+import logo from '../../../assets/logo.png'
 
 const NavBar = () => {
   return (

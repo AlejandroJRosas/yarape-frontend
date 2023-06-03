@@ -2,81 +2,86 @@
   {
     "id": "1",
     "name": "Administración de Empresas",
-    "soloCcs": false
+    "campus": ["guayana", "caracas", "teques"]
   },
   {
     "id": "2",
     "name": "Contaduría Pública",
-    "soloCcs": false
+    "campus": ["guayana", "caracas", "teques"]
   },
   {
     "id": "3",
     "name": "Relaciones Industriales",
-    "soloCcs": false
+    "campus": ["guayana", "caracas"]
   },
   {
     "id": "4",
     "name": "Sociología",
-    "soloCcs": true
+    "campus": ["caracas"]
   },
   {
     "id": "5",
     "name": "Economía",
-    "soloCcs": true
+    "campus": ["caracas"]
   },
   {
     "id": "6",
     "name": "Derecho",
-    "soloCcs": false
+    "campus": ["guayana", "caracas"]
   },
   {
     "id": "7",
     "name": "Letras",
-    "soloCcs": true
+    "campus": ["caracas"]
   },
   {
     "id": "8",
     "name": "Psicología",
-    "soloCcs": true
+    "campus": ["caracas"]
   },
   {
     "id": "9",
     "name": "Filosofía",
-    "soloCcs": true
+    "campus": ["caracas"]
   },
   {
     "id": "10",
-    "name": "Comunicación Social",
-    "soloCcs": false
+    "name": "Educación",
+    "campus": ["guayana", "caracas", "teques"]
   },
   {
     "id": "11",
-    "name": "Ingeniería en Telecomunicaciones",
-    "soloCcs": true
+    "name": "Comunicación Social",
+    "campus": ["guayana", "caracas"]
   },
   {
     "id": "12",
-    "name": "Ingeniería Civil",
-    "soloCcs": false
+    "name": "Ingeniería en Telecomunicaciones",
+    "campus": ["caracas"]
   },
   {
     "id": "13",
-    "name": "Ingeniería Industrial",
-    "soloCcs": false
+    "name": "Ingeniería Civil",
+    "campus": ["guayana", "caracas"]
   },
   {
     "id": "14",
-    "name": "Ingeniería Informática",
-    "soloCcs": false
+    "name": "Ingeniería Industrial",
+    "campus": ["guayana", "caracas"]
   },
   {
     "id": "15",
-    "name": "Arquitectura",
-    "soloCcs": true
+    "name": "Ingeniería Informática",
+    "campus": ["guayana", "caracas"]
   },
   {
     "id": "16",
+    "name": "Arquitectura",
+    "campus": ["caracas"]
+  },
+  {
+    "id": "17",
     "name": "Teología",
-    "soloCcs": true
+    "campus": ["caracas"]
   }
 ]

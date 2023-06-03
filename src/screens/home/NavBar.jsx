@@ -2,7 +2,7 @@ import clsx from 'clsx'
 
 import logo from '../../../assets/logo.png'
 
-const NavBar = () => {
+export const NavBar = () => {
   return (
     <div className={clsx('flex flex-col items-center justify-center')}>
       <div className={clsx('')}>
@@ -18,5 +18,3 @@ const NavBar = () => {
     </div>
   )
 }
-
-export default NavBar

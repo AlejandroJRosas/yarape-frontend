@@ -1,11 +1,11 @@
-import PersonalForm from './personalForm'
+import { PersonalForm } from './personalForm'
+// import { QuestionsForm } from './questionsForm'
 
-const Form = () => {
+export const Form = () => {
   return (
     <>
       <PersonalForm />
+      {/* <QuestionsForm /> */}
     </>
   )
 }
-
-export default Form

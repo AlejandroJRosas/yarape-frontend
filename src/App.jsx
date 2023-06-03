@@ -1,8 +1,8 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
-import Home from './screens/home'
-import Form from './screens/form'
-import PageNotFound from './screens/pageNotFound'
+import { Home } from './screens/home'
+import { Form } from './screens/form'
+import { PageNotFound } from './screens/pageNotFound'
 
 const App = () => {
   return (

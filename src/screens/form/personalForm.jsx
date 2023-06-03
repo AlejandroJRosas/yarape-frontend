@@ -1,25 +1,36 @@
 import { useState, useEffect } from 'react'
 import clsx from 'clsx'
 import careersData from '../../json/careers.json'
-// import CustomButton from './button'
+import { Button } from '../../components/button'
 
-const PersonalForm = () => {
+export const PersonalForm = () => {
   const [name, setName] = useState('')
   const [isStudent, setIsStudent] = useState('unselected')
   const [selectedCampus, setSelectedCampus] = useState('unselected')
   const [selectedCareer, setSelectedCareer] = useState('unselected')
   const [careers, setCareers] = useState([])
 
+  const [isStudentB1, setIsStudentB1] = useState(false)
+  const [isStudentB2, setIsStudentB2] = useState(false)
+  const [selectedCampusB1, setSelectedCampusB1] = useState(false)
+  const [selectedCampusB2, setSelectedCampusB2] = useState(false)
+  const [selectedCampusB3, setSelectedCampusB3] = useState(false)
+
   const handleNameChange = (event) => {
     setName(event.target.value)
   }
 
   const handleIsStudentChange = (event) => {
-    setIsStudent(event.target.value)
+    setIsStudent(event)
+    setIsStudentB1(false)
+    setIsStudentB2(false)
   }
 
   const handleCampusChange = (event) => {
-    setSelectedCampus(event.target.value)
+    setSelectedCampus(event)
+    setSelectedCampusB1(false)
+    setSelectedCampusB2(false)
+    setSelectedCampusB3(false)
   }
 
   const handleCareerChange = (event) => {
@@ -30,7 +41,7 @@ const PersonalForm = () => {
     event.preventDefault()
   }
 
-  const isEnabledButton = () => {
+  const useIsEnabledButton = () => {
     if (
       name !== '' &&
       isStudent === 'yes' &&
@@ -40,13 +51,18 @@ const PersonalForm = () => {
       return true
     if (name !== '' && isStudent === 'no') return true
   }
+  const isEnabledButton = useIsEnabledButton()
 
   useEffect(() => {
     setCareers(careersData)
   }, [])
 
   return (
-    <div className={clsx('flex flex-col h-screen items-center justify-center')}>
+    <div
+      className={clsx(
+        'flex flex-col h-screen w-full items-center justify-center'
+      )}
+    >
       <form
         onSubmit={handleSubmit}
         className={clsx(
@@ -60,61 +76,76 @@ const PersonalForm = () => {
           placeholder='Ingresa tu nombre'
           onChange={handleNameChange}
         />
-        <section>
+        <section className='flex flex-col items-center py-4'>
           ¿Estudias en la UCAB?
-          <label>
-            <input
-              type='radio'
-              name='isStudent'
-              value={'yes'}
-              onChange={handleIsStudentChange}
-            />
-            Si
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='isStudent'
-              value={'no'}
-              onChange={handleIsStudentChange}
-            />
-            No
-          </label>
+          <div className='flex flex-row pt-2'>
+            <Button
+              buttonState={isStudentB1}
+              setButton={setIsStudentB1}
+              onClick={() => handleIsStudentChange('yes')}
+              isEnabled={true}
+              size={'small'}
+              buttonType={'button'}
+              className={'mx-1'}
+            >
+              Si
+            </Button>
+            <Button
+              buttonState={isStudentB2}
+              setButton={setIsStudentB2}
+              onClick={() => handleIsStudentChange('no')}
+              isEnabled={true}
+              size={'small'}
+              buttonType={'button'}
+              className={'mx-1'}
+            >
+              No
+            </Button>
+          </div>
         </section>
-        <section className='flex flex-col'>
-          Sede
-          <label>
-            Caracas
-            <input
-              type='radio'
-              name='campus'
-              value={'caracas'}
-              onChange={handleCampusChange}
-              disabled={!(isStudent === 'yes')}
-            />
-          </label>
-          <label>
-            Guayana
-            <input
-              type='radio'
-              name='campus'
-              value={'guayana'}
-              onChange={handleCampusChange}
-              disabled={!(isStudent === 'yes')}
-            />
-          </label>
-          <label>
-            Los Teques
-            <input
-              type='radio'
-              name='campus'
-              value={'teques'}
-              onChange={handleCampusChange}
-              disabled={!(isStudent === 'yes')}
-            />
-          </label>
+        <section className='flex flex-col items-center pb-4'>
+          Sede en la que estudias
+          <div className='flex flex-row pt-2'>
+            <Button
+              buttonState={selectedCampusB1}
+              setButton={setSelectedCampusB1}
+              onClick={() => handleCampusChange('caracas')}
+              isEnabled={isStudent === 'yes'}
+              size={'small'}
+              buttonType={'button'}
+              className={
+                'bg-UCABLogoYellow mx-1 hover:bg-UCABLogoYellow ring-UCABLogoYellow'
+              }
+            >
+              Caracas
+            </Button>
+            <Button
+              buttonState={selectedCampusB2}
+              setButton={setSelectedCampusB2}
+              onClick={() => handleCampusChange('guayana')}
+              isEnabled={isStudent === 'yes'}
+              size={'small'}
+              buttonType={'button'}
+              className={
+                'bg-UCABLogoBlue mx-1 hover:bg-UCABLogoBlue ring-UCABLogoBlue'
+              }
+            >
+              Guayana
+            </Button>
+            <Button
+              buttonState={selectedCampusB3}
+              setButton={setSelectedCampusB3}
+              onClick={() => handleCampusChange('teques')}
+              isEnabled={isStudent === 'yes'}
+              size={'small'}
+              buttonType={'button'}
+              className={'bg-UCABLogoGreen mx-1 ring-UCABLogoGreen'}
+            >
+              Los Teques
+            </Button>
+          </div>
         </section>
-        <section>
+        <section className='flex flex-col items-center pb-2'>
           ¿Qué carrera estudias?
           <select
             id='careers'
@@ -122,6 +153,7 @@ const PersonalForm = () => {
             value={selectedCareer}
             onChange={handleCareerChange}
             disabled={selectedCampus === 'unselected' || isStudent === 'no'}
+            className='pb-4'
           >
             {careers
               .filter((career) => career.campus.includes(selectedCampus))
@@ -132,20 +164,15 @@ const PersonalForm = () => {
               ))}
           </select>
         </section>
-        <button
-          className={clsx(
-            'text-white py-2 px-8 rounded-xl text-2xl font-semibold tracking-wide bg-GreenPalette cursor-pointer inline-flex items-center justify-center transition ',
-            'hover:bg-[#2db946] hover:shadow-xl outline-none ring-GreenPalette ring-offset-2 focus-visible:ring-2 focus:scale-[0.95]',
-            'disabled:bg-green-500/50 disabled:cursor-not-allowed disabled:shadow'
-          )}
-          type='submit'
-          disabled={!isEnabledButton()}
+        <Button
+          buttonState={null}
+          isEnabled={isEnabledButton}
+          size={'large'}
+          buttonType={'submit'}
         >
           Siguiente
-        </button>
+        </Button>
       </form>
     </div>
   )
 }
-
-export default PersonalForm

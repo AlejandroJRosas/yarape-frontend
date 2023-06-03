@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import food from '../../../assets/categories/food.jpg'
 
-const TransitionForm = () => {
+export const TransitionForm = () => {
   return (
     <div
       className={clsx(
@@ -41,5 +41,3 @@ const TransitionForm = () => {
     </div>
   )
 }
-
-export default TransitionForm

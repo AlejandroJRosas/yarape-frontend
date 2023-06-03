@@ -2,7 +2,7 @@ import clsx from 'clsx'
 
 import NavBar from './NavBar'
 
-const Layout = (props) => {
+export const Layout = (props) => {
   return (
     <div>
       <div className={clsx('flex flex-col w-full h-screen bg-[antiquewhite]')}>
@@ -12,5 +12,3 @@ const Layout = (props) => {
     </div>
   )
 }
-
-export default Layout

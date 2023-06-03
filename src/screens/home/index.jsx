@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 
+import { Button } from '../../components/button'
 import h1 from '../../../assets/homeAssets/h1.png'
 import h2 from '../../../assets/homeAssets/h2.jpeg'
 import h3 from '../../../assets/homeAssets/h3.jpg'
-import NavBar from './NavBar'
+import { NavBar } from './NavBar'
 
-const Home = () => {
+export const Home = () => {
   return (
     <>
       {/* MainPage */}
@@ -35,16 +36,10 @@ const Home = () => {
                 el ambiente
               </p>
             </div>
-            <Link
-              to='/form'
-              className={clsx(
-                'text-white py-2 px-8 rounded-xl text-2xl font-semibold tracking-wide bg-GreenPalette cursor-pointer inline-flex items-center justify-center transition ',
-                '',
-                'hover:bg-[#2db946] hover:shadow-xl outline-none ring-GreenPalette ring-offset-2 focus-visible:ring-2 focus:scale-[0.95]',
-                'disabled:bg-green-500/50 disabled:cursor-not-allowed disabled:shadow'
-              )}
-            >
-              Empezar!
+            <Link to='/form' tabIndex={-1}>
+              <Button size={'large'} isEnabled={true} buttonType={'button'}>
+                Empezar!
+              </Button>
             </Link>
           </div>
         </div>
@@ -147,5 +142,3 @@ const Home = () => {
     </>
   )
 }
-
-export default Home

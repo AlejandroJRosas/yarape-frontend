@@ -1,4 +1,4 @@
-import classNames from 'classnames'
+import { classNames } from 'classnames'
 
 const CustomButton = ({ selected, children, ...rest }) => {
   const buttonClasses = classNames(
@@ -7,7 +7,6 @@ const CustomButton = ({ selected, children, ...rest }) => {
     'rounded-md',
     'font-bold',
     'uppercase',
-    'tracking-wider',
     'transition-colors',
     'duration-300',
     {

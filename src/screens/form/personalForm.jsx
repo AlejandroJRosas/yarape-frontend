@@ -9,7 +9,7 @@ export const PersonalForm = () => {
   const [isStudent, setIsStudent] = useState('unselected')
   const [selectedCampus, setSelectedCampus] = useState('unselected')
   const [selectedCareer, setSelectedCareer] = useState('unselected')
-  const [careers, setCareers] = useState([])
+  const careers = careersData;
 
   const [isStudentB1, setIsStudentB1] = useState(false)
   const [isStudentB2, setIsStudentB2] = useState(false)
@@ -53,10 +53,6 @@ export const PersonalForm = () => {
     if (name !== '' && isStudent === 'no') return true
   }
   const isEnabledButton = useIsEnabledButton()
-
-  useEffect(() => {
-    setCareers(careersData)
-  }, [])
 
   return (
     <div

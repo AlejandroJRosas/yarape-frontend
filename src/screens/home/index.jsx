@@ -6,6 +6,8 @@ import h1 from '../../../assets/homeAssets/h1.png'
 import h2 from '../../../assets/homeAssets/h2.jpeg'
 import h3 from '../../../assets/homeAssets/h3.jpg'
 import { NavBar } from './NavBar'
+import { ImageComponent } from '../../components/imageComponent'
+import homeImagesHash from '../../../assets/homeAssets'
 
 export const Home = () => {
   return (
@@ -19,9 +21,10 @@ export const Home = () => {
               'flex flex-col items-center justify-around w-full h-full relative'
             )}
           >
-            <img
+            <ImageComponent
               src={h1}
-              className={clsx('w-full h-full object-cover absolute -z-10')}
+              hash={homeImagesHash[0].blurhash}
+              compClassName={'w-full h-full object-cover absolute -z-10'}
             />
             <div
               className={clsx(
@@ -69,11 +72,12 @@ export const Home = () => {
               'md:w-2/5 md:h-[40vw]'
             )}
           >
-            <img
+            <ImageComponent
               src={h2}
-              className={clsx(
+              hash={homeImagesHash[1].blurhash}
+              compClassName={
                 'w-full h-full object-cover object-center rounded-full'
-              )}
+              }
             />
           </div>
           <div
@@ -117,11 +121,12 @@ export const Home = () => {
               'md:w-2/5 md:h-[40vw]'
             )}
           >
-            <img
+            <ImageComponent
               src={h3}
-              className={clsx(
+              hash={homeImagesHash[2].blurhash}
+              compClassName={
                 'w-full h-full object-cover object-center rounded-full'
-              )}
+              }
             />
           </div>
           <div

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import clsx from 'clsx'
 import careersData from '../../json/careers.json'
 import { Button } from '../../components/button'
+import leafBackImg from '../../../assets/categories/leafBack.avif'
 
 export const PersonalForm = () => {
   const [name, setName] = useState('')
@@ -63,116 +64,121 @@ export const PersonalForm = () => {
         'flex flex-col h-screen w-full items-center justify-center'
       )}
     >
-      <form
-        onSubmit={handleSubmit}
-        className={clsx(
-          'flex flex-col bg-gray-100 rounded-xl text-black w-3/4 items-center'
-        )}
+      <div
+        className='bg-cover w-full h-full flex flex-col items-center justify-center'
+        style={{ backgroundImage: `url(${leafBackImg})` }}
       >
-        <label htmlFor='name'>Hola! ¿Cuál es tu nombre?</label>
-        <input
-          type='text'
-          name='name'
-          placeholder='Ingresa tu nombre'
-          onChange={handleNameChange}
-        />
-        <section className='flex flex-col items-center py-4'>
-          ¿Estudias en la UCAB?
-          <div className='flex flex-row pt-2'>
-            <Button
-              buttonState={isStudentB1}
-              setButton={setIsStudentB1}
-              onClick={() => handleIsStudentChange('yes')}
-              isEnabled={true}
-              size={'small'}
-              buttonType={'button'}
-              className={'mx-1'}
-            >
-              Si
-            </Button>
-            <Button
-              buttonState={isStudentB2}
-              setButton={setIsStudentB2}
-              onClick={() => handleIsStudentChange('no')}
-              isEnabled={true}
-              size={'small'}
-              buttonType={'button'}
-              className={'mx-1'}
-            >
-              No
-            </Button>
-          </div>
-        </section>
-        <section className='flex flex-col items-center pb-4'>
-          Sede en la que estudias
-          <div className='flex flex-row pt-2'>
-            <Button
-              buttonState={selectedCampusB1}
-              setButton={setSelectedCampusB1}
-              onClick={() => handleCampusChange('caracas')}
-              isEnabled={isStudent === 'yes'}
-              size={'small'}
-              buttonType={'button'}
-              className={
-                'bg-UCABLogoYellow mx-1 hover:bg-UCABLogoYellow ring-UCABLogoYellow'
-              }
-            >
-              Caracas
-            </Button>
-            <Button
-              buttonState={selectedCampusB2}
-              setButton={setSelectedCampusB2}
-              onClick={() => handleCampusChange('guayana')}
-              isEnabled={isStudent === 'yes'}
-              size={'small'}
-              buttonType={'button'}
-              className={
-                'bg-UCABLogoBlue mx-1 hover:bg-UCABLogoBlue ring-UCABLogoBlue'
-              }
-            >
-              Guayana
-            </Button>
-            <Button
-              buttonState={selectedCampusB3}
-              setButton={setSelectedCampusB3}
-              onClick={() => handleCampusChange('teques')}
-              isEnabled={isStudent === 'yes'}
-              size={'small'}
-              buttonType={'button'}
-              className={'bg-UCABLogoGreen mx-1 ring-UCABLogoGreen'}
-            >
-              Los Teques
-            </Button>
-          </div>
-        </section>
-        <section className='flex flex-col items-center pb-2'>
-          ¿Qué carrera estudias?
-          <select
-            id='careers'
-            name='careers'
-            value={selectedCareer}
-            onChange={handleCareerChange}
-            disabled={selectedCampus === 'unselected' || isStudent === 'no'}
-            className='pb-4'
-          >
-            {careers
-              .filter((career) => career.campus.includes(selectedCampus))
-              .map((career) => (
-                <option key={career.id} value={career.id}>
-                  {career.name}
-                </option>
-              ))}
-          </select>
-        </section>
-        <Button
-          buttonState={null}
-          isEnabled={isEnabledButton}
-          size={'large'}
-          buttonType={'submit'}
+        <form
+          onSubmit={handleSubmit}
+          className={clsx(
+            'flex flex-col bg-gray-100 rounded-xl text-black w-3/4 items-center text-lg font-medium px-4 py-10'
+          )}
         >
-          Siguiente
-        </Button>
-      </form>
+          <label htmlFor='name'>Hola! ¿Cuál es tu nombre?</label>
+          <input
+            type='text'
+            name='name'
+            placeholder='Ingresa tu nombre'
+            onChange={handleNameChange}
+          />
+          <section className='flex flex-col items-center py-4'>
+            ¿Estudias en la UCAB?
+            <div className='flex flex-row pt-4'>
+              <Button
+                buttonState={isStudentB1}
+                setButton={setIsStudentB1}
+                onClick={() => handleIsStudentChange('yes')}
+                isEnabled={true}
+                size={'small'}
+                buttonType={'button'}
+                className={'mx-1'}
+              >
+                Si
+              </Button>
+              <Button
+                buttonState={isStudentB2}
+                setButton={setIsStudentB2}
+                onClick={() => handleIsStudentChange('no')}
+                isEnabled={true}
+                size={'small'}
+                buttonType={'button'}
+                className={'mx-1'}
+              >
+                No
+              </Button>
+            </div>
+          </section>
+          <section className='flex flex-col items-center pb-4'>
+            Sede en la que estudias
+            <div className='flex flex-row pt-4'>
+              <Button
+                buttonState={selectedCampusB1}
+                setButton={setSelectedCampusB1}
+                onClick={() => handleCampusChange('caracas')}
+                isEnabled={isStudent === 'yes'}
+                size={'small'}
+                buttonType={'button'}
+                className={
+                  'bg-UCABLogoYellow mx-1 hover:bg-UCABLogoYellow ring-UCABLogoYellow'
+                }
+              >
+                Caracas
+              </Button>
+              <Button
+                buttonState={selectedCampusB2}
+                setButton={setSelectedCampusB2}
+                onClick={() => handleCampusChange('guayana')}
+                isEnabled={isStudent === 'yes'}
+                size={'small'}
+                buttonType={'button'}
+                className={
+                  'bg-UCABLogoBlue mx-1 hover:bg-UCABLogoBlue ring-UCABLogoBlue'
+                }
+              >
+                Guayana
+              </Button>
+              <Button
+                buttonState={selectedCampusB3}
+                setButton={setSelectedCampusB3}
+                onClick={() => handleCampusChange('teques')}
+                isEnabled={isStudent === 'yes'}
+                size={'small'}
+                buttonType={'button'}
+                className={'bg-UCABLogoGreen mx-1 ring-UCABLogoGreen'}
+              >
+                Los Teques
+              </Button>
+            </div>
+          </section>
+          <section className='flex flex-col items-center pb-2'>
+            ¿Qué carrera estudias?
+            <select
+              id='careers'
+              name='careers'
+              value={selectedCareer}
+              onChange={handleCareerChange}
+              disabled={selectedCampus === 'unselected' || isStudent === 'no'}
+              className='mb-12 mt-4 w-3/4 md:w-auto'
+            >
+              {careers
+                .filter((career) => career.campus.includes(selectedCampus))
+                .map((career) => (
+                  <option key={career.id} value={career.id}>
+                    {career.name}
+                  </option>
+                ))}
+            </select>
+          </section>
+          <Button
+            buttonState={null}
+            isEnabled={isEnabledButton}
+            size={'large'}
+            buttonType={'submit'}
+          >
+            Siguiente
+          </Button>
+        </form>
+      </div>
     </div>
   )
 }

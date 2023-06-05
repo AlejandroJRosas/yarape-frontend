@@ -1,5 +1,7 @@
 import leafBackImg from '../../../assets/categories/leafBack.avif'
 import { RecomendationComponent } from './recomendations-components'
+import { Link } from 'react-router-dom'
+import { Button } from '../../components/button'
 
 export const Recomendations = ({ status }) => {
   const ayuda = () => {
@@ -38,6 +40,16 @@ export const Recomendations = ({ status }) => {
             Cómo puedes reducir tu huella:
           </label>
           <div className='flex flex-col w-4/5 md:flex-row'>{ayuda()}</div>
+          <Link to={'/'} tabIndex={-1}>
+            <Button
+              size={'large'}
+              isEnabled={true}
+              buttonType={'button'}
+              onHome={true}
+            >
+              Volver al inicio
+            </Button>
+          </Link>
         </div>
       </div>
     </>

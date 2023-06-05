@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 
 import { Button } from '../../components/button'
-import h1 from '../../../assets/homeAssets/h1.png'
+import h1 from '../../../assets/homeAssets/h1.jpg'
 import h2 from '../../../assets/homeAssets/h2.jpeg'
 import h3 from '../../../assets/homeAssets/h3.jpg'
 import { NavBar } from './NavBar'

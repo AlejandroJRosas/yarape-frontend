@@ -1,44 +1,49 @@
 import { useState } from 'react'
-// Own
-// import { PersonalForm } from './personalForm'
-import QuestionComponent from './question-component';
-import preguntasData from '../../../json/preguntas.json';
+import QuestionComponent from './question-component'
+import preguntasData from '../../../json/preguntas.json'
 
 const QuestionForms = (props) => {
-  const categories = preguntasData;
-  const [categoryId, setCategoryId] = useState(1);
-  const [questionId, setQuestionId] = useState(1);
-  const [userResponse, setUserResponse] = useState({});
+  const categories = preguntasData
+  const [categoryId, setCategoryId] = useState(1)
+  const [questionId, setQuestionId] = useState(1)
+  const [userResponse, setUserResponse] = useState({})
 
-  const category = categories.find(category => category.id_categoria === categoryId);
-  const question = category.preguntas.find(question => question.id_pregunta === questionId);
+  const category = categories.find(
+    (category) => category.id_categoria === categoryId
+  )
+  const question = category.preguntas.find(
+    (question) => question.id_pregunta === questionId
+  )
 
-  const onNext = (value) => {
-    console.log('---->', value);
+  const onNext = (value, { skipSteps }) => {
+    console.log('---->', value)
     const newUserResponse = {
       ...userResponse,
-      [value.key]: value.value,
-    };
+      [value.key]: value.value
+    }
     setUserResponse({
-      ...newUserResponse,
-    });
+      ...newUserResponse
+    })
 
-    const isFinalCategory = category.id_categoria === categories.length;
-    const isFinalQuestion = question.id_pregunta === category.preguntas.length;
+    const isFinalCategory = category.id_categoria === categories.length
+    const isFinalQuestion = question.id_pregunta === category.preguntas.length
 
     if (isFinalCategory && isFinalQuestion) {
-      console.log('Acabo todas las preguntas :3', userResponse);
-      props.onFinalQuestion(newUserResponse);
-      return;
+      console.log('Acabo todas las preguntas :3', userResponse)
+      props.onFinalQuestion(newUserResponse)
+      return
     }
 
     if (isFinalQuestion) {
-      setCategoryId((currentCategoryId) => currentCategoryId + 1);
-      setQuestionId(1);
+      setCategoryId((currentCategoryId) => currentCategoryId + 1)
+      setQuestionId(1)
     } else {
-      setQuestionId((currentQuestionId) => currentQuestionId + 1);
+      if (skipSteps) {
+        setQuestionId((currentQuestionId) => currentQuestionId + 1 + skipSteps)
+      } else {
+        setQuestionId((currentQuestionId) => currentQuestionId + 1)
+      }
     }
-
   }
 
   return (
@@ -50,4 +55,4 @@ const QuestionForms = (props) => {
   )
 }
 
-export default QuestionForms;
+export default QuestionForms

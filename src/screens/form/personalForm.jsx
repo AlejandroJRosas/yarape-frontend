@@ -1,15 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import clsx from 'clsx'
 import careersData from '../../json/careers.json'
 import { Button } from '../../components/button'
 import leafBackImg from '../../../assets/categories/leafBack.avif'
+import { formContext } from '../../context/formContext'
 
-export const PersonalForm = () => {
+export const PersonalForm = ({ onNext }) => {
   const [name, setName] = useState('')
   const [isStudent, setIsStudent] = useState('unselected')
   const [selectedCampus, setSelectedCampus] = useState('unselected')
   const [selectedCareer, setSelectedCareer] = useState('unselected')
-  const careers = careersData;
+  const careers = careersData
+
+  const { setUserName } = useContext(formContext)
 
   const [isStudentB1, setIsStudentB1] = useState(false)
   const [isStudentB2, setIsStudentB2] = useState(false)
@@ -40,6 +43,9 @@ export const PersonalForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    console.log(name)
+    setUserName(name)
+    onNext()
   }
 
   const useIsEnabledButton = () => {
@@ -67,7 +73,7 @@ export const PersonalForm = () => {
         <form
           onSubmit={handleSubmit}
           className={clsx(
-            'flex flex-col bg-gray-100 rounded-xl text-black w-3/4 items-center text-lg font-medium px-4 py-10'
+            'flex flex-col bg-gray-100 rounded-xl text-black w-3/4 md:w-auto items-center text-lg font-medium px-4 py-10'
           )}
         >
           <label htmlFor='name'>Hola! ¿Cuál es tu nombre?</label>
@@ -76,6 +82,7 @@ export const PersonalForm = () => {
             name='name'
             placeholder='Ingresa tu nombre'
             onChange={handleNameChange}
+            className='px-2'
           />
           <section className='flex flex-col items-center py-4'>
             ¿Estudias en la UCAB?
@@ -170,6 +177,7 @@ export const PersonalForm = () => {
             isEnabled={isEnabledButton}
             size={'large'}
             buttonType={'submit'}
+            onHome={true}
           >
             Siguiente
           </Button>

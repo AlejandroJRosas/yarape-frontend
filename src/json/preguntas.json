@@ -1,397 +1,437 @@
 [
-    {
-        "id_categoria": 1,
-        "descripcion_catg": "Transporte",
-        "preguntas": [
-            {
-                "id_pregunta": 1,
-                "llavePregunta": "transportMethod",
-                "descripcion_preg": "Que medio frecuentas para ir a la universidad?",
-                "referencia": null,
-                "opciones": [
-                    {
-                        "peso": 29.41,
-                        "correlative": 1,
-                        "descripcion_opcion": "Carro"
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "Moto",
-                        "peso": 20.76
-                    },
-                    {
-                        "correlative": 3,
-                        "descripcion_opcion": "Autobus",
-                        "peso": 6.92
-                    },
-                    {
-                        "correlative": 4,
-                        "descripcion_opcion": "Bicicleta",
-                        "peso": 3.46
-                    },
-                    {
-                        "correlative": 5,
-                        "descripcion_opcion": "Camina",
-                        "peso": 0
-                    }
-                ]
-            },
-            {
-                "id_pregunta": 2,
-                "llavePregunta": "distanceHouse",
-                "descripcion_preg": "Que tan lejos vives?",
-                "referencia": 1,
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "0-2km",
-                        "peso": 2
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "3-5km",
-                        "peso": 5
-                    },
-                    {
-                        "correlative": 3,
-                        "descripcion_opcion": "+ 6km",
-                        "peso": 6
-                    }
-                ]
-            },
-            {
-                "id_pregunta": 3,
-                "llavePregunta": "isElectrical",
-                "descripcion_preg": "Es electrico/a?",
-                "referencia": 2,
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Si",
-                        "peso": 0.01
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "No",
-                        "peso": 1
-                    }
-                ]
-            },
-            {
-                "id_pregunta": 4,
-                "llavePregunta": "quantityPeopleTransport",
-                "descripcion_preg": "Llevas a mas personas a la universidad?",
-                "referencia": 3,
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Si",
-                        "peso": 0.2
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "No",
-                        "peso": 3
-                    }
-                ]
-            }
+  {
+    "id_categoria": 1,
+    "descripcion_catg": "Transporte",
+    "preguntas": [
+      {
+        "id_pregunta": 1,
+        "llavePregunta": "transportMethod",
+        "descripcion_preg": "¿Qué medio frecuentas para trasladarte?",
+        "referencia": null,
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Carro",
+            "peso": 0.17
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "Moto",
+            "peso": 0.12
+          },
+          {
+            "correlative": 3,
+            "descripcion_opcion": "Autobus",
+            "peso": 0.04
+          },
+          {
+            "correlative": 4,
+            "descripcion_opcion": "Bicicleta",
+            "peso": 0.02
+          },
+          {
+            "correlative": 5,
+            "descripcion_opcion": "Camina",
+            "peso": 0
+          }
         ]
-    },
-    {
-        "id_categoria": 2,
-        "descripcion_catg": "Alimentos",
-        "preguntas": [
-            {
-                "id_pregunta": 1,
-                "llavePregunta": "enQueSeBasaTuDieta",
-                "descripcion_preg": "En que se basa tu dieta comun?",
-                "referencia": null,
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Carne/Lacteos/vegetales",
-                        "peso": 1.46
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "Carne/Lacteos",
-                        "peso": 1.34
-                    },
-                    {
-                        "correlative": 3,
-                        "descripcion_opcion": "vegetariana",
-                        "peso": 500
-                    },
-                    {
-                        "correlative": 4,
-                        "descripcion_opcion": "Vegana",
-                        "peso": 500
-                    }
-                ]
-            },
-            {
-                "id_pregunta": 2,
-                "llavePregunta": "tipoDeCarneFrecuente",
-                "descripcion_preg": "Cual es el tipo de carne que frecuentas?",
-                "referencia": 1,
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Carnes Rojas",
-                        "peso": 8.1
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "Carnes Blancas",
-                        "peso": 5.4
-                    }
-                ]
-            },
-            {
-                "id_pregunta": 3,
-                "llavePregunta": "consumesCarneDiario",
-                "descripcion_preg": "Las consumes diariamene?",
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Si",
-                        "peso": 365,
-                        "referencia": 2
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "No",
-                        "peso": 200,
-                        "referencia": 2
-                    }
-                ]
-            },
-            {
-                "id_pregunta": 4,
-                "llavePregunta": "consumesComidaImportada",
-                "descripcion_preg": "Consumes comida importada?",
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Si",
-                        "peso": 700,
-                        "referencia": 3
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "No",
-                        "peso": 0,
-                        "referencia": 3
-                    }
-                ]
-            }
+      },
+      {
+        "id_pregunta": 2,
+        "llavePregunta": "isElectrical",
+        "descripcion_preg": "¿Es electrico/a?",
+        "referencia": 2,
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Si",
+            "peso": 0.01
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "No",
+            "peso": 1
+          }
         ]
-    },
-    {
-        "id_categoria": 3,
-        "descripcion_catg": "Agua",
-        "preguntas": [
-            {
-                "id_pregunta": 1,
-                "llavePregunta": "usasLosBanosDeUniversidad",
-                "descripcion_preg": "Aproximadamente que tanto usas los baños de la universidad?",
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "0-1 vez",
-                        "peso": 0.825,
-                        "referencia": 0
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "2-3 veces",
-                        "peso": 1.65,
-                        "referencia": 0
-                    },
-                    {
-                        "correlative": 3,
-                        "descripcion_opcion": "+3 veces",
-                        "peso": 3.3,
-                        "referencia": 0
-                    }
-                ]
-            },
-            {
-                "id_pregunta": 2,
-                "llavePregunta": "usasLosFiltrosDeLaUniversidad",
-                "descripcion_preg": "Sueles tomar agua de los filtros?",
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Si",
-                        "peso": 65,
-                        "referencia": 0
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "No",
-                        "peso": 24,
-                        "referencia": 0
-                    }
-                ]
-            }
+      },
+      {
+        "id_pregunta": 3,
+        "llavePregunta": "quantityPeopleTransport",
+        "descripcion_preg": "¿Sueles llevar a personas a la universidad?",
+        "referencia": 3,
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Si",
+            "peso": 0.2
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "No",
+            "peso": 3
+          }
         ]
-    },
-    {
-        "id_categoria": 4,
-        "descripcion_catg": "Compras",
-        "preguntas": [
-            {
-                "id_pregunta": 1,
-                "llavePregunta": "vestimentaComun",
-                "descripcion_preg": "Tu vestimenta comun es:",
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "De segunda mano",
-                        "peso": 0.825,
-                        "referencia": 0
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "Nueva",
-                        "peso": 1.65,
-                        "referencia": 0
-                    }
-                ]
-            },
-            {
-                "id_pregunta": 2,
-                "llavePregunta": "tuRopaEsImportada",
-                "descripcion_preg": "Tu ropa es importada?",
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Si",
-                        "peso": 369,
-                        "referencia": 1
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "No",
-                        "peso": 0,
-                        "referencia": 1
-                    }
-                ]
-            }
+      },
+      {
+        "id_pregunta": 4,
+        "llavePregunta": "distanceHouse",
+        "descripcion_preg": "¿Qué tanto recorres en tu medio de transporte?",
+        "referencia": 1,
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "0-2km",
+            "peso": 1040
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "3-5km",
+            "peso": 2600
+          },
+          {
+            "correlative": 3,
+            "descripcion_opcion": "+6km",
+            "peso": 3120
+          }
         ]
-    },
-    {
-        "id_categoria": 5,
-        "descripcion_catg": "Produccion de residuos",
-        "preguntas": [
-            {
-                "id_pregunta": 1,
-                "llavePregunta": "usasCuadernosReciclados",
-                "descripcion_preg": "Usas cuadernos reciclados?",
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Si",
-                        "peso": 40.2,
-                        "referencia": 0
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "No",
-                        "peso": 60.4,
-                        "referencia": 0
-                    }
-                ]
-            },
-            {
-                "id_pregunta": 2,
-                "llavePregunta": "comprasProductosQueVenganEnPlastico",
-                "descripcion_preg": "Compras productos que vengan en envases plasticos?",
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Si",
-                        "peso": 192,
-                        "referencia": 0
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "No",
-                        "peso": 25,
-                        "referencia": 0
-                    }
-                ]
-            },
-            {
-                "id_pregunta": 3,
-                "llavePregunta": "tuReutilizasLosProductos",
-                "descripcion_preg": "Los reutilizas?",
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Si",
-                        "peso": -96.2,
-                        "referencia": 2
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "No",
-                        "peso": 0,
-                        "referencia": 2
-                    }
-                ]
-            }
+      },
+      {
+        "id_pregunta": 5,
+        "llavePregunta": "fliesYear",
+        "descripcion_preg": "¿Cuántas veces realizas viajes en avión al año?",
+        "referencia": 1,
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "1 vez",
+            "peso": 100
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "2-3 veces",
+            "peso": 250
+          },
+          {
+            "correlative": 3,
+            "descripcion_opcion": "+4 veces",
+            "peso": 500
+          },
+          {
+            "correlative": 4,
+            "descripcion_opcion": "No aplica",
+            "peso": 0
+          }
         ]
-    },
-    {
-        "id_categoria": 6,
-        "descripcion_catg": "Energia",
-        "preguntas": [
-            {
-                "id_pregunta": 1,
-                "llavePregunta": "tienesBombillosAhorradoresEnCasa",
-                "descripcion_preg": "Tienes bombillos ahorradores en tu casa?",
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "Si",
-                        "peso": 40.2,
-                        "referencia": 0
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "No",
-                        "peso": 60.4,
-                        "referencia": 0
-                    }
-                ]
-            },
-            {
-                "id_pregunta": 2,
-                "llavePregunta": "cuantasHorasUsasElAire",
-                "descripcion_preg": "Cuantas horas usas el aire acondicionado al dia?",
-                "opciones": [
-                    {
-                        "correlative": 1,
-                        "descripcion_opcion": "0-3hrs",
-                        "peso": 672,
-                        "referencia": 0
-                    },
-                    {
-                        "correlative": 2,
-                        "descripcion_opcion": "3-6hrs",
-                        "peso": 1680,
-                        "referencia": 0
-                    },
-                    {
-                        "correlative": 3,
-                        "descripcion_opcion": "+7hrs",
-                        "peso": 2352,
-                        "referencia": 0
-                    }
-                ]
-            }
+      }
+    ]
+  },
+  {
+    "id_categoria": 2,
+    "descripcion_catg": "Alimentos",
+    "preguntas": [
+      {
+        "id_pregunta": 1,
+        "llavePregunta": "enQueSeBasaTuDieta",
+        "descripcion_preg": "¿En qué se basa tu dieta común?",
+        "referencia": null,
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Carne/Lacteos/vegetales",
+            "peso": 1.46
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "Carne/Lacteos",
+            "peso": 1.34
+          },
+          {
+            "correlative": 3,
+            "descripcion_opcion": "Vegetariana",
+            "peso": 1800
+          },
+          {
+            "correlative": 4,
+            "descripcion_opcion": "Vegana",
+            "peso": 1500
+          }
         ]
-    }
+      },
+      {
+        "id_pregunta": 2,
+        "llavePregunta": "tipoDeCarneFrecuente",
+        "descripcion_preg": "¿Cuál es el tipo de carne que frecuentas?",
+        "referencia": 1,
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Carnes Rojas",
+            "peso": 5.4
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "Carnes Blancas",
+            "peso": 3.6
+          }
+        ]
+      },
+      {
+        "id_pregunta": 3,
+        "llavePregunta": "consumesCarneDiario",
+        "descripcion_preg": "¿Las consumes diariamente?",
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Si",
+            "peso": 365,
+            "referencia": 2
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "No",
+            "peso": 200,
+            "referencia": 2
+          }
+        ]
+      },
+      {
+        "id_pregunta": 4,
+        "llavePregunta": "consumesComidaImportada",
+        "descripcion_preg": "¿Consumes comida importada?",
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Si",
+            "peso": 700,
+            "referencia": 3
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "No",
+            "peso": 0,
+            "referencia": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id_categoria": 3,
+    "descripcion_catg": "Agua",
+    "preguntas": [
+      {
+        "id_pregunta": 1,
+        "llavePregunta": "usasLosBanosDeUniversidad",
+        "descripcion_preg": "¿Cuántas veces vas al baño al día?",
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "1 vez",
+            "peso": 0.825,
+            "referencia": 0
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "2-3 veces",
+            "peso": 1.65,
+            "referencia": 0
+          },
+          {
+            "correlative": 3,
+            "descripcion_opcion": "+3 veces",
+            "peso": 3.3,
+            "referencia": 0
+          }
+        ]
+      },
+      {
+        "id_pregunta": 2,
+        "llavePregunta": "usasLosFiltrosDeLaUniversidad",
+        "descripcion_preg": "¿Cuánto tiempo te tomas al ducharte?",
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "1-5 min",
+            "peso": 31.5,
+            "referencia": 0
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "5-10 min",
+            "peso": 60.3,
+            "referencia": 0
+          },
+          {
+            "correlative": 3,
+            "descripcion_opcion": "10-15 min",
+            "peso": 94.5,
+            "referencia": 0
+          },
+          {
+            "correlative": 4,
+            "descripcion_opcion": "+15 min",
+            "peso": 126,
+            "referencia": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id_categoria": 4,
+    "descripcion_catg": "Compras",
+    "preguntas": [
+      {
+        "id_pregunta": 1,
+        "llavePregunta": "vestimentaComun",
+        "descripcion_preg": "Tu vestimenta comun es:",
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "De segunda mano",
+            "peso": 60,
+            "referencia": 0
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "Nueva",
+            "peso": 360,
+            "referencia": 0
+          }
+        ]
+      },
+      {
+        "id_pregunta": 2,
+        "llavePregunta": "tuRopaEsImportada",
+        "descripcion_preg": "¿Tu ropa es importada?",
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Si",
+            "peso": 369,
+            "referencia": 1
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "No",
+            "peso": 0,
+            "referencia": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id_categoria": 5,
+    "descripcion_catg": "Produccion de residuos",
+    "preguntas": [
+      {
+        "id_pregunta": 1,
+        "llavePregunta": "usasCuadernosReciclados",
+        "descripcion_preg": "¿Usas cuadernos reciclados?",
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Si",
+            "peso": 40.2,
+            "referencia": 0
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "No",
+            "peso": 60.4,
+            "referencia": 0
+          }
+        ]
+      },
+      {
+        "id_pregunta": 2,
+        "llavePregunta": "comprasProductosQueVenganEnPlastico",
+        "descripcion_preg": "¿Compras productos que vengan en envases plásticos?",
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Si",
+            "peso": 192,
+            "referencia": 0
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "No",
+            "peso": 25,
+            "referencia": 0
+          }
+        ]
+      },
+      {
+        "id_pregunta": 3,
+        "llavePregunta": "tuReutilizasLosProductos",
+        "descripcion_preg": "¿Los reutilizas?",
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Si",
+            "peso": -96.2,
+            "referencia": 2
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "No",
+            "peso": 0,
+            "referencia": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id_categoria": 6,
+    "descripcion_catg": "Energía",
+    "preguntas": [
+      {
+        "id_pregunta": 1,
+        "llavePregunta": "tienesBombillosAhorradoresEnCasa",
+        "descripcion_preg": "¿Tienes bombillos ahorradores en tu casa?",
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "Si",
+            "peso": 403,
+            "referencia": 0
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "No",
+            "peso": 672,
+            "referencia": 0
+          }
+        ]
+      },
+      {
+        "id_pregunta": 2,
+        "llavePregunta": "cuantasHorasUsasElAire",
+        "descripcion_preg": "¿Cuántas horas usas el aire acondicionado al dia?",
+        "opciones": [
+          {
+            "correlative": 1,
+            "descripcion_opcion": "0-3hrs",
+            "peso": 672,
+            "referencia": 0
+          },
+          {
+            "correlative": 2,
+            "descripcion_opcion": "3-6hrs",
+            "peso": 1680,
+            "referencia": 0
+          },
+          {
+            "correlative": 3,
+            "descripcion_opcion": "+7hrs",
+            "peso": 2352,
+            "referencia": 0
+          }
+        ]
+      }
+    ]
+  }
 ]

@@ -104,6 +104,8 @@ const Button = forwardRef(
       buttonState,
       setButton,
       onClick,
+      onForm,
+      onHome,
       ...rest
     },
     ref
@@ -113,15 +115,18 @@ const Button = forwardRef(
         ref={ref}
         className={clsx(twMerge(variants({ variant, size, className })), {
           'ring-offset-4 ring-4 scale-[0.85]':
-            (buttonState && isEnabled) || (buttonState === null && isEnabled),
-          '': buttonState === false && isEnabled
+            (buttonState && isEnabled) || (buttonState === null && isEnabled)
         })}
         {...rest}
         disabled={!isEnabled}
         type={buttonType}
         onClick={() => {
-          onClick()
-          setButton(true)
+          if (!onHome) {
+            onClick()
+            if (!onForm) {
+              setButton(true)
+            }
+          }
         }}
       >
         {loading && <Loading />}

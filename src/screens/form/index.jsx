@@ -7,8 +7,8 @@ import { Recomendations } from './recomendations'
 
 export const Form = () => {
   const { setUserFootprint } = useContext(formContext)
-  // personal-form | question-form | result-form;
   const [screenShow, setScreenShow] = useState('personal-form')
+  const [mood, setMood] = useState(null)
 
   const goToQuestionForm = () => {
     setScreenShow('question-form')
@@ -18,9 +18,11 @@ export const Form = () => {
     setScreenShow('result-form')
   }
 
-  const onFinalQuestion = (data) => {
-    console.log('!!!!!!!!!este men acabo todas las preguntas :D', data)
+  const goToRecomendations = () => {
+    setScreenShow('recomendations')
+  }
 
+  const onFinalQuestion = (data) => {
     const categoriaTransporteCalculo =
       data['transportMethod'] *
         (data['isElectrical'] | 1) *
@@ -43,16 +45,6 @@ export const Form = () => {
     const categoriaEnergiaCalculo =
       data['tienesBombillosAhorradoresEnCasa'] + data['cuantasHorasUsasElAire']
 
-    console.log(
-      '-->',
-      categoriaTransporteCalculo,
-      categoriaAlimentoCalculo,
-      categoriaAguaCalculo,
-      categoriaComprasCalculo,
-      categoriaReciclaCalculo,
-      categoriaEnergiaCalculo
-    )
-
     const sumaHuella =
       categoriaTransporteCalculo +
       categoriaAlimentoCalculo +
@@ -61,13 +53,11 @@ export const Form = () => {
       categoriaReciclaCalculo +
       categoriaEnergiaCalculo
 
-    console.log('--->------------>', sumaHuella)
     setUserFootprint(sumaHuella)
     setScreenShow('result-form')
   }
 
   const router = {
-    // 'personal-form': <Recomendations />,
     'personal-form': <PersonalForm onNext={goToQuestionForm} />,
     'question-form': (
       <QuestionsForm
@@ -75,8 +65,8 @@ export const Form = () => {
         onNext={goToResultForm}
       />
     ),
-    'result-form': <ResultForm />,
-    recomendations: <Recomendations />
+    'result-form': <ResultForm onNext={goToRecomendations} setMood={setMood} />,
+    recomendations: <Recomendations status={mood} />
   }
 
   return <>{router[screenShow]}</>

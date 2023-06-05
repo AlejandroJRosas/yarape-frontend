@@ -16,7 +16,6 @@ const QuestionForms = (props) => {
   )
 
   const onNext = (value, { skipSteps }) => {
-    console.log('---->', value)
     const newUserResponse = {
       ...userResponse,
       [value.key]: value.value
@@ -29,7 +28,6 @@ const QuestionForms = (props) => {
     const isFinalQuestion = question.id_pregunta === category.preguntas.length
 
     if (isFinalCategory && isFinalQuestion) {
-      console.log('Acabo todas las preguntas :3', userResponse)
       props.onFinalQuestion(newUserResponse)
       return
     }

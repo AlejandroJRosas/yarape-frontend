@@ -25,17 +25,31 @@ const resultados = {
   }
 }
 
-export const ResultForm = () => {
+export const ResultForm = ({ onNext, setMood }) => {
   const { userName, userFootprint } = useContext(formContext)
 
   const range = () => {
     const value = Number((userFootprint * 0.001).toFixed(2))
-    if (value > 8.5) return 'bad'
-    if (value >= 5 && value <= 8.5) return 'normal'
-    if (value < 5) return 'good'
+    if (value > 8.5) {
+      setMood('bad')
+      return 'bad'
+    }
+    if (value >= 5 && value <= 8.5) {
+      setMood('normal')
+      return 'normal'
+    }
+    if (value < 5) {
+      setMood('good')
+      return 'good'
+    }
   }
 
   const useRange = range()
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    onNext()
+  }
 
   return (
     <>
@@ -64,9 +78,17 @@ export const ResultForm = () => {
             <label>{resultados[useRange].lb2}</label>
           </div>
           <img src={resultados[useRange].img} />
-          <Button size={'large'} isEnabled={true}>
-            Siguiente
-          </Button>
+          <form onSubmit={handleSubmit}>
+            <Button
+              buttonState={null}
+              isEnabled={true}
+              size={'large'}
+              buttonType={'submit'}
+              onHome={true}
+            >
+              Siguiente
+            </Button>
+          </form>
         </div>
       </div>
     </>

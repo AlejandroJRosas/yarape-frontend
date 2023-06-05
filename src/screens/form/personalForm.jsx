@@ -43,7 +43,6 @@ export const PersonalForm = ({ onNext }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(name)
     setUserName(name)
     onNext()
   }

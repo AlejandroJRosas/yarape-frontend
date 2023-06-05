@@ -40,7 +40,12 @@ export const Home = () => {
               </p>
             </div>
             <Link to='/form' tabIndex={-1}>
-              <Button size={'large'} isEnabled={true} buttonType={'button'}>
+              <Button
+                size={'large'}
+                isEnabled={true}
+                buttonType={'button'}
+                onHome={true}
+              >
                 Empezar!
               </Button>
             </Link>

@@ -55,7 +55,8 @@ export const RecomendationComponent = ({ status, number }) => {
   return (
     <div
       className={clsx(
-        'flex flex-row h-40 w-full text-center mx-3 rounded-2xl px-4 my-4 md:my-0',
+        'flex flex-row md:flex-row h-40 md:h-40 w-full text-center mx-3 rounded-2xl px-4 my-4 md:my-0 justify-center',
+        { 'h-auto': status === 'good', 'flex-col': status === 'good' },
         {
           'bg-blue-500': result[status][number].img === transportImg,
           'bg-yellow-400':

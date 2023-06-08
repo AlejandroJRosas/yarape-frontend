@@ -3,6 +3,7 @@ import { ImageComponent } from '../../../components/imageComponent'
 import categoriesImagesHash from '../../../../assets/categories'
 import { Button } from '../../../components/button'
 import leafBackImg from '../../../../assets/categories/leafBack.avif'
+import viviendaImg from '../../../../assets/categories/vivienda.jpg'
 import transportImg from '../../../../assets/categories/transport.jpg'
 import foodImg from '../../../../assets/categories/food.jpg'
 import waterImg from '../../../../assets/categories/water.jpg'
@@ -19,6 +20,7 @@ const QuestionsForm = (props) => {
   const options = question.opciones
 
   const categoryImages = {
+    Vivienda: viviendaImg,
     Transporte: transportImg,
     Alimentos: foodImg,
     Agua: waterImg,
@@ -31,9 +33,22 @@ const QuestionsForm = (props) => {
   const getOptionByCorrelativeId = useGetOptionByCorrelativeId(question)
 
   const stepsToSkip = () => {
+    if (isApartmentUser()) return 1
     if (isWalking()) return 2
     if (isVegetarian()) return 2
     return 0
+  }
+
+  const isApartmentUser = () => {
+    if (categoryDescription === 'Vivienda') {
+      const option = getOptionByCorrelativeId(selectedOptionId)
+      if (questionId === 1) {
+        if (option.correlative === 1) {
+          return true
+        }
+      }
+    }
+    return false
   }
 
   const isWalking = () => {
@@ -86,9 +101,7 @@ const QuestionsForm = (props) => {
             <ImageComponent
               src={categoryImages[categoryDescription]}
               hash={categoriesImagesHash[0].blurhash}
-              compClassName={
-                'object-cover w-full h-full md:rounded-full transition'
-              }
+              compClassName={'object-cover w-full h-full md:rounded-full'}
             />
           </div>
           <div className='self-center h-1/6 text-2xl md:text-4xl font-semibold'>
@@ -97,7 +110,7 @@ const QuestionsForm = (props) => {
         </div>
         <form className='flex flex-col h-2/3 items-center justify-around text-center w-[95%] md:w-4/5'>
           <label className='text-3xl font-semibold md:mb-8 md:mx-8'>
-            {questionId}-{questionDescription}
+            {questionDescription}
           </label>
           <div className='flex flex-col md:mb-8'>
             {options.map((option) => {
@@ -114,7 +127,7 @@ const QuestionsForm = (props) => {
                   className={'mb-4'}
                   size={'large'}
                 >
-                  {option.correlative}-{option.descripcion_opcion}
+                  {option.descripcion_opcion}
                 </Button>
               )
             })}

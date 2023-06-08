@@ -30,15 +30,15 @@ export const ResultForm = ({ onNext, setMood }) => {
 
   const range = () => {
     const value = Number((userFootprint * 0.001).toFixed(2))
-    if (value > 8.5) {
+    if (value > 9) {
       setMood('bad')
       return 'bad'
     }
-    if (value >= 5 && value <= 8.5) {
+    if (value >= 6 && value <= 9) {
       setMood('normal')
       return 'normal'
     }
-    if (value < 5) {
+    if (value < 6) {
       setMood('good')
       return 'good'
     }

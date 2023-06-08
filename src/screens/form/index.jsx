@@ -23,6 +23,10 @@ export const Form = () => {
   }
 
   const onFinalQuestion = (data) => {
+    const categoriaViviendaCalculo =
+      data['enQueCasaVives'] *
+      (data['livingSize'] | 1) *
+      data['personasQueHabitan']
     const categoriaTransporteCalculo =
       data['transportMethod'] *
         (data['isElectrical'] | 1) *
@@ -46,6 +50,7 @@ export const Form = () => {
       data['tienesBombillosAhorradoresEnCasa'] + data['cuantasHorasUsasElAire']
 
     const sumaHuella =
+      categoriaViviendaCalculo +
       categoriaTransporteCalculo +
       categoriaAlimentoCalculo +
       categoriaAguaCalculo +

@@ -5,8 +5,13 @@ import { formContext } from '../../context/formContext'
 import { ResultForm } from './resultsForm'
 import { Recomendations } from './recomendations'
 
+const CO2Equivalente = 3.9
+const HagEquivalente = 1.5
+const TargetHagSustainableRate = 1.6
+
 export const Form = () => {
-  const { setUserFootprint } = useContext(formContext)
+  const { setUserFootprint, setUserHagFP, setEarthQuantity } =
+    useContext(formContext)
   const [screenShow, setScreenShow] = useState('personal-form')
   const [mood, setMood] = useState(null)
 
@@ -58,7 +63,13 @@ export const Form = () => {
       categoriaReciclaCalculo +
       categoriaEnergiaCalculo
 
+    const conversionHag = (sumaHuella * 0.001 * HagEquivalente) / CO2Equivalente
+
+    const cantidadTierras = conversionHag / TargetHagSustainableRate
+
     setUserFootprint(sumaHuella)
+    setUserHagFP(conversionHag)
+    setEarthQuantity(cantidadTierras)
     setScreenShow('result-form')
   }
 

@@ -4,7 +4,8 @@ import { formContext } from './formContext'
 export const MyProviders = ({ children }) => {
   const [userName, setUserName] = useState(null)
   const [userFootprint, setUserFootprint] = useState(null)
-  const [isVegetarian, setIsVegetarian] = useState(null)
+  const [userHagFP, setUserHagFP] = useState(null)
+  const [earthQuantity, setEarthQuantity] = useState(null)
 
   return (
     <formContext.Provider
@@ -13,8 +14,10 @@ export const MyProviders = ({ children }) => {
         setUserName,
         userFootprint,
         setUserFootprint,
-        isVegetarian,
-        setIsVegetarian
+        userHagFP,
+        setUserHagFP,
+        earthQuantity,
+        setEarthQuantity
       }}
     >
       {children}

@@ -2,8 +2,11 @@ import leafBackImg from '../../../assets/categories/leafBack.avif'
 import { RecomendationComponent } from './recomendations-components'
 import { Link } from 'react-router-dom'
 import { Button } from '../../components/button'
+import { useContext } from 'react'
+import { formContext } from '../../context/formContext'
 
 export const Recomendations = ({ status }) => {
+  const { resetStateValues } = useContext(formContext)
   const ayuda = () => {
     if (status === 'bad') {
       return (
@@ -46,6 +49,7 @@ export const Recomendations = ({ status }) => {
               isEnabled={true}
               buttonType={'button'}
               onHome={true}
+              onClick={resetStateValues()}
             >
               Volver al inicio
             </Button>

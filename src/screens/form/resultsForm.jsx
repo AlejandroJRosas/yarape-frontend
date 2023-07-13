@@ -26,10 +26,10 @@ const resultados = {
 }
 
 export const ResultForm = ({ onNext, setMood }) => {
-  const { userName, userFootprint } = useContext(formContext)
+  const { name, footprint } = useContext(formContext)
 
   const range = () => {
-    const value = Number((userFootprint * 0.001).toFixed(2))
+    const value = Number((footprint * 0.001).toFixed(2))
     if (value > 9) {
       setMood('bad')
       return 'bad'
@@ -59,7 +59,7 @@ export const ResultForm = ({ onNext, setMood }) => {
           style={{ backgroundImage: `url(${leafBackImg})` }}
         >
           <div className='flex flex-col text-3xl font-semibold w-4/5'>
-            <label>Hemos terminado! {userName}</label>
+            <label>Hemos terminado! {name}</label>
             <label>Tu huella ecológica es de:</label>
           </div>
           <div
@@ -70,7 +70,7 @@ export const ResultForm = ({ onNext, setMood }) => {
             })}
           >
             <label className='text-4xl font-semibold text-white'>
-              {Number((userFootprint * 0.001).toFixed(2))} Ton de CO2
+              {Number((footprint * 0.001).toFixed(2))} Ton de CO2
             </label>
           </div>
           <div className='text-3xl font-bold text-center flex flex-col'>

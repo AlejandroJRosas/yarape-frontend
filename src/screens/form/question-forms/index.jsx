@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { formContext } from '../../../context/formContext'
 import QuestionComponent from './question-component'
 import questionsData from '../../../json/preguntas.json'
 
@@ -7,6 +8,8 @@ const QuestionForms = (props) => {
   const [categoryId, setCategoryId] = useState(1)
   const [questionId, setQuestionId] = useState(1)
   const [userResponse, setUserResponse] = useState({})
+
+  const { items, setItems } = useContext(formContext)
 
   const category = categories.find(
     (category) => category.categoryId === categoryId
@@ -24,10 +27,26 @@ const QuestionForms = (props) => {
       ...newUserResponse
     })
 
+    const newitems = {
+      ...items,
+      items: [
+        ...(items.items ?? []),
+        {
+          categoryId: value.categoryId,
+          questionId: value.questionId,
+          optionId: value.optionId
+        }
+      ]
+    }
+    setItems({
+      ...newitems
+    })
+
     const isFinalCategory = category.categoryId === categories.length
     const isFinalQuestion = question.questionId === category.questions.length
 
     if (isFinalCategory && isFinalQuestion) {
+      console.log('sexo')
       props.onFinalQuestion(newUserResponse)
       return
     }

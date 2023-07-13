@@ -6,16 +6,13 @@ import { formContext } from '../../context/formContext'
 import careersData from '../../json/careers.json'
 
 export const RoleForm = ({ onNext }) => {
-  const [role, setRole] = useState(null)
-  const [selectedCampus, setSelectedCampus] = useState('unselected')
-  const [selectedCareer, setSelectedCareer] = useState('unselected')
-
-  const { setUserName } = useContext(formContext)
+  const { role, setRole, campusId, setCampusId, careerId, setCareerId } =
+    useContext(formContext)
 
   const [roleB1, setRoleB1] = useState(false)
   const [roleB2, setRoleB2] = useState(false)
-  const [selectedCampusB1, setSelectedCampusB1] = useState(false)
-  const [selectedCampusB2, setSelectedCampusB2] = useState(false)
+  const [campusIdB1, setCampusIdB1] = useState(false)
+  const [campusIdB2, setCampusIdB2] = useState(false)
 
   const handleRoleChange = (event) => {
     setRole(event)
@@ -24,28 +21,26 @@ export const RoleForm = ({ onNext }) => {
   }
 
   const handleCampusChange = (event) => {
-    setSelectedCampus(event)
-    setSelectedCampusB1(false)
-    setSelectedCampusB2(false)
+    setCampusId(event)
+    setCampusIdB1(false)
+    setCampusIdB2(false)
   }
 
   const handleCareerChange = (event) => {
-    setSelectedCareer(event.target.value)
+    setCareerId(event.target.value)
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    setUserName(name)
     onNext()
   }
 
   const useIsEnabledButton = () => {
     if (role === 'E') {
-      if (selectedCampus !== 'unselected' && selectedCareer !== 'unselected')
-        return true
+      if (campusId !== null && careerId !== null) return true
     }
     if (role === 'T') {
-      if (selectedCampus !== 'unselected') return true
+      if (campusId !== null) return true
     }
   }
   const isEnabledButton = useIsEnabledButton()
@@ -97,8 +92,8 @@ export const RoleForm = ({ onNext }) => {
             Sede
             <div className='flex flex-row pt-4'>
               <Button
-                buttonState={selectedCampusB1}
-                setButton={setSelectedCampusB1}
+                buttonState={campusIdB1}
+                setButton={setCampusIdB1}
                 onClick={() => handleCampusChange('caracas')}
                 isEnabled={role !== null}
                 size={'small'}
@@ -110,8 +105,8 @@ export const RoleForm = ({ onNext }) => {
                 Caracas
               </Button>
               <Button
-                buttonState={selectedCampusB2}
-                setButton={setSelectedCampusB2}
+                buttonState={campusIdB2}
+                setButton={setCampusIdB2}
                 onClick={() => handleCampusChange('guayana')}
                 isEnabled={role !== null}
                 size={'small'}
@@ -129,13 +124,13 @@ export const RoleForm = ({ onNext }) => {
             <select
               id='careers'
               name='careers'
-              value={selectedCareer}
+              value={careerId}
               onChange={handleCareerChange}
-              disabled={selectedCampus === 'unselected' || role === 'T'}
+              disabled={campusId === null || role === 'T'}
               className='mb-12 mt-4 w-3/4 md:w-auto'
             >
               {careersData
-                .filter((career) => career.campus.includes(selectedCampus))
+                .filter((career) => career.campus.includes(campusId))
                 .map((career) => (
                   <option key={career.id} value={career.id}>
                     {career.name}

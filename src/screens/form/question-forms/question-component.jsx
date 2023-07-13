@@ -13,6 +13,7 @@ import energyImg from '../../../../assets/categories/energy.jpg'
 
 const QuestionsForm = (props) => {
   const { category, question } = props
+  const categoryId = category.categoryId
   const categoryDescription = category.description
   const questionDescription = question.description
   const questionKey = question.questionKey
@@ -80,6 +81,8 @@ const QuestionsForm = (props) => {
 
     props.onNext(
       {
+        categoryId: categoryId,
+        questionId: questionId,
         key: questionKey,
         optionId: option.optionId,
         value: option.amount

@@ -5,15 +5,25 @@ import QuestionsForm from './question-forms'
 import { formContext } from '../../context/formContext'
 import { ResultForm } from './resultsForm'
 import { Recomendations } from './recomendations'
+import createUser from '../../services/postUsers'
 
 const CO2Equivalente = 3.9
 const HagEquivalente = 1.5
 const TargetHagSustainableRate = 1.6
 
 export const Form = () => {
-  const [isUcabMember, setIsUcabMember] = useState(null)
-  const { setUserFootprint, setUserHagFP, setEarthQuantity } =
-    useContext(formContext)
+  const {
+    name,
+    isUcabMember,
+    footprint,
+    campusId,
+    role,
+    careerId,
+    items,
+    setFootprint,
+    setUserHagFP,
+    setEarthQuantity
+  } = useContext(formContext)
   const [screenShow, setScreenShow] = useState('personal-form')
   const [mood, setMood] = useState(null)
 
@@ -34,6 +44,7 @@ export const Form = () => {
   }
 
   const onFinalQuestion = (data) => {
+    console.log('onFinalQuestions')
     const categoriaViviendaCalculo =
       data['enQueCasaVives'] *
       (data['livingSize'] | 1) *
@@ -73,7 +84,17 @@ export const Form = () => {
 
     const cantidadTierras = conversionHag / TargetHagSustainableRate
 
-    setUserFootprint(sumaHuella)
+    const userCreateData = {
+      name,
+      isUcabMember,
+      footprint: Number((footprint * 0.001).toFixed(2)),
+      campusId: campusId === 'guayana' ? 1 : 2,
+      role,
+      careerId: Number(careerId),
+      items: items.items
+    }
+    createUser(userCreateData)
+    setFootprint(sumaHuella)
     setUserHagFP(conversionHag)
     setEarthQuantity(cantidadTierras)
     setScreenShow('result-form')
@@ -81,11 +102,7 @@ export const Form = () => {
 
   const router = {
     'personal-form': (
-      <PersonalForm
-        isUcabMember={isUcabMember}
-        setIsUcabMember={setIsUcabMember}
-        onNext={isUcabMember ? goToRoleForm : goToQuestionForm}
-      />
+      <PersonalForm onNext={isUcabMember ? goToRoleForm : goToQuestionForm} />
     ),
     'role-form': <RoleForm onNext={goToQuestionForm} />,
     'question-form': (

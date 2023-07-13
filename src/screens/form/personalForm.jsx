@@ -4,10 +4,9 @@ import { Button } from '../../components/button'
 import leafBackImg from '../../../assets/categories/leafBack.avif'
 import { formContext } from '../../context/formContext'
 
-export const PersonalForm = ({ onNext, isUcabMember, setIsUcabMember }) => {
-  const [name, setName] = useState('')
-
-  const { setUserName } = useContext(formContext)
+export const PersonalForm = ({ onNext }) => {
+  const { name, setName, isUcabMember, setIsUcabMember } =
+    useContext(formContext)
 
   const [isUcabMemberB1, setIsUcabMemberB1] = useState(false)
   const [isUcabMemberB2, setIsUcabMemberB2] = useState(false)
@@ -24,7 +23,7 @@ export const PersonalForm = ({ onNext, isUcabMember, setIsUcabMember }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    setUserName(name)
+    setName(name)
     onNext()
   }
 

@@ -2,12 +2,12 @@
   {
     "id": "1",
     "name": "Administración de Empresas",
-    "campus": ["guayana", "caracas", "teques"]
+    "campus": ["guayana", "caracas"]
   },
   {
     "id": "2",
     "name": "Contaduría Pública",
-    "campus": ["guayana", "caracas", "teques"]
+    "campus": ["guayana", "caracas"]
   },
   {
     "id": "3",
@@ -47,7 +47,7 @@
   {
     "id": "10",
     "name": "Educación",
-    "campus": ["guayana", "caracas", "teques"]
+    "campus": ["guayana", "caracas"]
   },
   {
     "id": "11",

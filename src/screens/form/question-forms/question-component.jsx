@@ -13,11 +13,11 @@ import energyImg from '../../../../assets/categories/energy.jpg'
 
 const QuestionsForm = (props) => {
   const { category, question } = props
-  const categoryDescription = category.descripcion_catg
-  const questionDescription = question.descripcion_preg
-  const questionKey = question.llavePregunta
-  const questionId = question.id_pregunta
-  const options = question.opciones
+  const categoryDescription = category.description
+  const questionDescription = question.description
+  const questionKey = question.questionKey
+  const questionId = question.questionId
+  const options = question.options
 
   const categoryImages = {
     Vivienda: viviendaImg,
@@ -25,12 +25,12 @@ const QuestionsForm = (props) => {
     Alimentos: foodImg,
     Agua: waterImg,
     Compras: shoppingImg,
-    'Produccion de residuos': recycleImg,
+    'Producción de Residuos': recycleImg,
     Energía: energyImg
   }
 
   const [selectedOptionId, setSelectedOptionId] = useState(null)
-  const getOptionByCorrelativeId = useGetOptionByCorrelativeId(question)
+  const getOptionByoptionId = useGetOptionByoptionId(question)
 
   const stepsToSkip = () => {
     if (isApartmentUser()) return 1
@@ -41,9 +41,9 @@ const QuestionsForm = (props) => {
 
   const isApartmentUser = () => {
     if (categoryDescription === 'Vivienda') {
-      const option = getOptionByCorrelativeId(selectedOptionId)
+      const option = getOptionByoptionId(selectedOptionId)
       if (questionId === 1) {
-        if (option.correlative === 1) {
+        if (option.optionId === 1) {
           return true
         }
       }
@@ -53,12 +53,12 @@ const QuestionsForm = (props) => {
 
   const isWalking = () => {
     if (categoryDescription === 'Transporte') {
-      const option = getOptionByCorrelativeId(selectedOptionId)
+      const option = getOptionByoptionId(selectedOptionId)
       if (questionId === 1) {
         if (
-          option.correlative === 3 ||
-          option.correlative === 4 ||
-          option.correlative === 5
+          option.optionId === 3 ||
+          option.optionId === 4 ||
+          option.optionId === 5
         )
           return true
       }
@@ -68,21 +68,21 @@ const QuestionsForm = (props) => {
 
   const isVegetarian = () => {
     if (categoryDescription === 'Alimentos') {
-      const option = getOptionByCorrelativeId(selectedOptionId)
-      if (option.correlative === 3 || option.correlative === 4) return true
+      const option = getOptionByoptionId(selectedOptionId)
+      if (option.optionId === 3 || option.optionId === 4) return true
     }
     return
   }
 
   const goNextQuestionBb = () => {
     setSelectedOptionId(null)
-    const option = getOptionByCorrelativeId(selectedOptionId)
+    const option = getOptionByoptionId(selectedOptionId)
 
     props.onNext(
       {
         key: questionKey,
-        optionId: option.correlative,
-        value: option.peso
+        optionId: option.optionId,
+        value: option.amount
       },
       { skipSteps: stepsToSkip() }
     )
@@ -116,18 +116,18 @@ const QuestionsForm = (props) => {
             {options.map((option) => {
               return (
                 <Button
-                  key={option.correlative}
+                  key={option.optionId}
                   buttonType={'button'}
                   isEnabled={true}
-                  buttonState={option.correlative === selectedOptionId}
+                  buttonState={option.optionId === selectedOptionId}
                   onClick={() => {
-                    setSelectedOptionId(option.correlative)
+                    setSelectedOptionId(option.optionId)
                   }}
                   onForm={true}
                   className={'mb-4'}
                   size={'large'}
                 >
-                  {option.descripcion_opcion}
+                  {option.description}
                 </Button>
               )
             })}
@@ -147,11 +147,9 @@ const QuestionsForm = (props) => {
   )
 }
 
-function useGetOptionByCorrelativeId(question) {
-  return (correlativeId) => {
-    return question.opciones.find(
-      (option) => option.correlative === correlativeId
-    )
+function useGetOptionByoptionId(question) {
+  return (optionId) => {
+    return question.options.find((option) => option.optionId === optionId)
   }
 }
 

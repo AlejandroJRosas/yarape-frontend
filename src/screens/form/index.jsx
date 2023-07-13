@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react'
 import { PersonalForm } from './personalForm'
+import { RoleForm } from './roleForm'
 import QuestionsForm from './question-forms'
 import { formContext } from '../../context/formContext'
 import { ResultForm } from './resultsForm'
@@ -10,10 +11,15 @@ const HagEquivalente = 1.5
 const TargetHagSustainableRate = 1.6
 
 export const Form = () => {
+  const [isUcabMember, setIsUcabMember] = useState(null)
   const { setUserFootprint, setUserHagFP, setEarthQuantity } =
     useContext(formContext)
   const [screenShow, setScreenShow] = useState('personal-form')
   const [mood, setMood] = useState(null)
+
+  const goToRoleForm = () => {
+    setScreenShow('role-form')
+  }
 
   const goToQuestionForm = () => {
     setScreenShow('question-form')
@@ -74,7 +80,14 @@ export const Form = () => {
   }
 
   const router = {
-    'personal-form': <PersonalForm onNext={goToQuestionForm} />,
+    'personal-form': (
+      <PersonalForm
+        isUcabMember={isUcabMember}
+        setIsUcabMember={setIsUcabMember}
+        onNext={isUcabMember ? goToRoleForm : goToQuestionForm}
+      />
+    ),
+    'role-form': <RoleForm onNext={goToQuestionForm} />,
     'question-form': (
       <QuestionsForm
         onFinalQuestion={onFinalQuestion}

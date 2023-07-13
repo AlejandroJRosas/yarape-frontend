@@ -1,478 +1,478 @@
 [
   {
-    "id_categoria": 1,
-    "descripcion_catg": "Vivienda",
-    "preguntas": [
+    "categoryId": 1,
+    "description": "Vivienda",
+    "questions": [
       {
-        "id_pregunta": 1,
-        "llavePregunta": "enQueCasaVives",
-        "descripcion_preg": "¿En qué tipo de casa vives?",
-        "opciones": [
+        "questionId": 1,
+        "questionKey": "enQueCasaVives",
+        "description": "¿En qué tipo de casa vives?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Apartamento",
-            "peso": 237
+            "optionId": 1,
+            "description": "Apartamento",
+            "amount": 237
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "Casa / Townhouse",
-            "peso": 1
+            "optionId": 2,
+            "description": "Casa / Townhouse",
+            "amount": 1
           }
         ]
       },
       {
-        "id_pregunta": 2,
-        "llavePregunta": "livingSize",
-        "descripcion_preg": "La casa en la que vives es:",
-        "opciones": [
+        "questionId": 2,
+        "questionKey": "livingSize",
+        "description": "La casa en la que vives es:",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Casa pequeña (2 habitaciones)",
-            "peso": 1700
+            "optionId": 1,
+            "description": "Casa pequeña (2 habitaciones)",
+            "amount": 1700
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "Casa mediana (3 - 4 habitaciones)",
-            "peso": 3400
+            "optionId": 2,
+            "description": "Casa mediana (3 - 4 habitaciones)",
+            "amount": 3400
           },
           {
-            "correlative": 3,
-            "descripcion_opcion": "Casa grande (+5 habitaciones)",
-            "peso": 5000
+            "optionId": 3,
+            "description": "Casa grande (+5 habitaciones)",
+            "amount": 5000
           }
         ]
       },
       {
-        "id_pregunta": 3,
-        "llavePregunta": "personasQueHabitan",
-        "descripcion_preg": "¿Cuántas personas habitan la vivienda?",
-        "opciones": [
+        "questionId": 3,
+        "questionKey": "personasQueHabitan",
+        "description": "¿Cuántas personas habitan la vivienda?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Vivo solo/a",
-            "peso": 1
+            "optionId": 1,
+            "description": "Vivo solo/a",
+            "amount": 1
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "2 personas",
-            "peso": 0.2
+            "optionId": 2,
+            "description": "2 personas",
+            "amount": 0.2
           },
           {
-            "correlative": 3,
-            "descripcion_opcion": "3 personas",
-            "peso": 0.3
+            "optionId": 3,
+            "description": "3 personas",
+            "amount": 0.3
           },
           {
-            "correlative": 4,
-            "descripcion_opcion": "+4 personas",
-            "peso": 0.5
+            "optionId": 4,
+            "description": "+4 personas",
+            "amount": 0.5
           }
         ]
       }
     ]
   },
   {
-    "id_categoria": 2,
-    "descripcion_catg": "Transporte",
-    "preguntas": [
+    "categoryId": 2,
+    "description": "Transporte",
+    "questions": [
       {
-        "id_pregunta": 1,
-        "llavePregunta": "transportMethod",
-        "descripcion_preg": "¿Qué medio frecuentas para trasladarte?",
-        "opciones": [
+        "questionId": 1,
+        "questionKey": "transportMethod",
+        "description": "¿Qué medio frecuentas para trasladarte?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Carro",
-            "peso": 0.17
+            "optionId": 1,
+            "description": "Carro",
+            "amount": 0.17
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "Moto",
-            "peso": 0.12
+            "optionId": 2,
+            "description": "Moto",
+            "amount": 0.12
           },
           {
-            "correlative": 3,
-            "descripcion_opcion": "Autobus",
-            "peso": 0.04
+            "optionId": 3,
+            "description": "Autobus",
+            "amount": 0.04
           },
           {
-            "correlative": 4,
-            "descripcion_opcion": "Bicicleta",
-            "peso": 0.02
+            "optionId": 4,
+            "description": "Bicicleta",
+            "amount": 0.02
           },
           {
-            "correlative": 5,
-            "descripcion_opcion": "Camino",
-            "peso": 0
+            "optionId": 5,
+            "description": "Camino",
+            "amount": 0
           }
         ]
       },
       {
-        "id_pregunta": 2,
-        "llavePregunta": "isElectrical",
-        "descripcion_preg": "¿Es un vehículo eléctrico?",
-        "opciones": [
+        "questionId": 2,
+        "questionKey": "isElectrical",
+        "description": "¿Es un vehículo eléctrico?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Si",
-            "peso": 0.01
+            "optionId": 1,
+            "description": "Si",
+            "amount": 0.01
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "No",
-            "peso": 1
+            "optionId": 2,
+            "description": "No",
+            "amount": 1
           }
         ]
       },
       {
-        "id_pregunta": 3,
-        "llavePregunta": "quantityPeopleTransport",
-        "descripcion_preg": "¿Sueles llevar a personas en tu vehículo?",
-        "opciones": [
+        "questionId": 3,
+        "questionKey": "quantityPeopleTransport",
+        "description": "¿Sueles llevar a personas en tu vehículo?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Si",
-            "peso": 0.2
+            "optionId": 1,
+            "description": "Si",
+            "amount": 0.2
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "No",
-            "peso": 3
+            "optionId": 2,
+            "description": "No",
+            "amount": 3
           }
         ]
       },
       {
-        "id_pregunta": 4,
-        "llavePregunta": "distanceHouse",
-        "descripcion_preg": "¿Qué tanto recorres diariamente en tu medio de transporte?",
-        "opciones": [
+        "questionId": 4,
+        "questionKey": "distanceHouse",
+        "description": "¿Qué tanto recorres diariamente en tu medio de transporte?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "0-2km",
-            "peso": 1040
+            "optionId": 1,
+            "description": "0-2km",
+            "amount": 1040
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "3-5km",
-            "peso": 2600
+            "optionId": 2,
+            "description": "3-5km",
+            "amount": 2600
           },
           {
-            "correlative": 3,
-            "descripcion_opcion": "+6km",
-            "peso": 3120
+            "optionId": 3,
+            "description": "+6km",
+            "amount": 3120
           }
         ]
       },
       {
-        "id_pregunta": 5,
-        "llavePregunta": "fliesYear",
-        "descripcion_preg": "¿Cuántas veces realizas viajes en avión al año?",
-        "opciones": [
+        "questionId": 5,
+        "questionKey": "fliesYear",
+        "description": "¿Cuántas veces realizas viajes en avión al año?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "1 vez",
-            "peso": 100
+            "optionId": 1,
+            "description": "1 vez",
+            "amount": 100
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "2-3 veces",
-            "peso": 250
+            "optionId": 2,
+            "description": "2-3 veces",
+            "amount": 250
           },
           {
-            "correlative": 3,
-            "descripcion_opcion": "+4 veces",
-            "peso": 500
+            "optionId": 3,
+            "description": "+4 veces",
+            "amount": 500
           },
           {
-            "correlative": 4,
-            "descripcion_opcion": "No suelo viajar",
-            "peso": 0
+            "optionId": 4,
+            "description": "No suelo viajar",
+            "amount": 0
           }
         ]
       }
     ]
   },
   {
-    "id_categoria": 3,
-    "descripcion_catg": "Alimentos",
-    "preguntas": [
+    "categoryId": 3,
+    "description": "Alimentos",
+    "questions": [
       {
-        "id_pregunta": 1,
-        "llavePregunta": "enQueSeBasaTuDieta",
-        "descripcion_preg": "¿En qué se basa tu dieta común?",
-        "opciones": [
+        "questionId": 1,
+        "questionKey": "enQueSeBasaTuDieta",
+        "description": "¿En qué se basa tu dieta común?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Carne/Lacteos/vegetales",
-            "peso": 1.46
+            "optionId": 1,
+            "description": "Carne/Lacteos/vegetales",
+            "amount": 1.46
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "Carne/Lacteos",
-            "peso": 1.34
+            "optionId": 2,
+            "description": "Carne/Lacteos",
+            "amount": 1.34
           },
           {
-            "correlative": 3,
-            "descripcion_opcion": "Vegetariana",
-            "peso": 1800
+            "optionId": 3,
+            "description": "Vegetariana",
+            "amount": 1800
           },
           {
-            "correlative": 4,
-            "descripcion_opcion": "Vegana",
-            "peso": 1500
+            "optionId": 4,
+            "description": "Vegana",
+            "amount": 1500
           }
         ]
       },
       {
-        "id_pregunta": 2,
-        "llavePregunta": "tipoDeCarneFrecuente",
-        "descripcion_preg": "¿Qué tipo de carne sueles consumir?",
-        "opciones": [
+        "questionId": 2,
+        "questionKey": "tipoDeCarneFrecuente",
+        "description": "¿Qué tipo de carne sueles consumir?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Carnes Rojas",
-            "peso": 5.4
+            "optionId": 1,
+            "description": "Carnes Rojas",
+            "amount": 5.4
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "Carnes Blancas",
-            "peso": 3.6
+            "optionId": 2,
+            "description": "Carnes Blancas",
+            "amount": 3.6
           }
         ]
       },
       {
-        "id_pregunta": 3,
-        "llavePregunta": "consumesCarneDiario",
-        "descripcion_preg": "¿Consumes carnes diariamente?",
-        "opciones": [
+        "questionId": 3,
+        "questionKey": "consumesCarneDiario",
+        "description": "¿Consumes carnes diariamente?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Si",
-            "peso": 365
+            "optionId": 1,
+            "description": "Si",
+            "amount": 365
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "No",
-            "peso": 200
+            "optionId": 2,
+            "description": "No",
+            "amount": 200
           }
         ]
       },
       {
-        "id_pregunta": 4,
-        "llavePregunta": "consumesComidaImportada",
-        "descripcion_preg": "¿Consumes alimentos importados?",
-        "opciones": [
+        "questionId": 4,
+        "questionKey": "consumesComidaImportada",
+        "description": "¿Consumes alimentos importados?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Si",
-            "peso": 700
+            "optionId": 1,
+            "description": "Si",
+            "amount": 700
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "No",
-            "peso": 0
+            "optionId": 2,
+            "description": "No",
+            "amount": 0
           }
         ]
       }
     ]
   },
   {
-    "id_categoria": 4,
-    "descripcion_catg": "Agua",
-    "preguntas": [
+    "categoryId": 4,
+    "description": "Agua",
+    "questions": [
       {
-        "id_pregunta": 1,
-        "llavePregunta": "usasLosBanosDeUniversidad",
-        "descripcion_preg": "¿Cuántas veces vas al baño al día?",
-        "opciones": [
+        "questionId": 1,
+        "questionKey": "usasLosBanosDeUniversidad",
+        "description": "¿Cuántas veces vas al baño al día?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "1 vez",
-            "peso": 0.825
+            "optionId": 1,
+            "description": "1 vez",
+            "amount": 0.825
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "2-3 veces",
-            "peso": 1.65
+            "optionId": 2,
+            "description": "2-3 veces",
+            "amount": 1.65
           },
           {
-            "correlative": 3,
-            "descripcion_opcion": "+3 veces",
-            "peso": 3.3
+            "optionId": 3,
+            "description": "+3 veces",
+            "amount": 3.3
           }
         ]
       },
       {
-        "id_pregunta": 2,
-        "llavePregunta": "usasLosFiltrosDeLaUniversidad",
-        "descripcion_preg": "¿Cuánto tiempo te tomas al ducharte?",
-        "opciones": [
+        "questionId": 2,
+        "questionKey": "usasLosFiltrosDeLaUniversidad",
+        "description": "¿Cuánto tiempo te tomas al ducharte?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "1-5 min",
-            "peso": 31.5
+            "optionId": 1,
+            "description": "1-5 min",
+            "amount": 31.5
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "5-10 min",
-            "peso": 60.3
+            "optionId": 2,
+            "description": "5-10 min",
+            "amount": 60.3
           },
           {
-            "correlative": 3,
-            "descripcion_opcion": "10-15 min",
-            "peso": 94.5
+            "optionId": 3,
+            "description": "10-15 min",
+            "amount": 94.5
           },
           {
-            "correlative": 4,
-            "descripcion_opcion": "+15 min",
-            "peso": 126
+            "optionId": 4,
+            "description": "+15 min",
+            "amount": 126
           }
         ]
       }
     ]
   },
   {
-    "id_categoria": 5,
-    "descripcion_catg": "Compras",
-    "preguntas": [
+    "categoryId": 5,
+    "description": "Compras",
+    "questions": [
       {
-        "id_pregunta": 1,
-        "llavePregunta": "vestimentaComun",
-        "descripcion_preg": "Tu vestimenta comun es:",
-        "opciones": [
+        "questionId": 1,
+        "questionKey": "vestimentaComun",
+        "description": "Tu vestimenta comun es:",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "De segunda mano",
-            "peso": 60
+            "optionId": 1,
+            "description": "De segunda mano",
+            "amount": 60
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "Nueva",
-            "peso": 360
+            "optionId": 2,
+            "description": "Nueva",
+            "amount": 360
           }
         ]
       },
       {
-        "id_pregunta": 2,
-        "llavePregunta": "tuRopaEsImportada",
-        "descripcion_preg": "¿Tu ropa es importada?",
-        "opciones": [
+        "questionId": 2,
+        "questionKey": "tuRopaEsImportada",
+        "description": "¿Tu ropa es importada?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Si",
-            "peso": 369
+            "optionId": 1,
+            "description": "Si",
+            "amount": 369
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "No",
-            "peso": 0
+            "optionId": 2,
+            "description": "No",
+            "amount": 0
           }
         ]
       }
     ]
   },
   {
-    "id_categoria": 6,
-    "descripcion_catg": "Produccion de residuos",
-    "preguntas": [
+    "categoryId": 6,
+    "description": "Produccion de residuos",
+    "questions": [
       {
-        "id_pregunta": 1,
-        "llavePregunta": "usasCuadernosReciclados",
-        "descripcion_preg": "¿Usas productos reciclados?",
-        "opciones": [
+        "questionId": 1,
+        "questionKey": "usasCuadernosReciclados",
+        "description": "¿Usas productos reciclados?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Si",
-            "peso": 40.2
+            "optionId": 1,
+            "description": "Si",
+            "amount": 40.2
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "No",
-            "peso": 60.4
+            "optionId": 2,
+            "description": "No",
+            "amount": 60.4
           }
         ]
       },
       {
-        "id_pregunta": 2,
-        "llavePregunta": "comprasProductosQueVenganEnPlastico",
-        "descripcion_preg": "¿Compras productos que vengan en envases plásticos?",
-        "opciones": [
+        "questionId": 2,
+        "questionKey": "comprasProductosQueVenganEnPlastico",
+        "description": "¿Compras productos que vengan en envases plásticos?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Si",
-            "peso": 192
+            "optionId": 1,
+            "description": "Si",
+            "amount": 192
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "No",
-            "peso": 25
+            "optionId": 2,
+            "description": "No",
+            "amount": 25
           }
         ]
       },
       {
-        "id_pregunta": 3,
-        "llavePregunta": "tuReutilizasLosProductos",
-        "descripcion_preg": "¿Reutilizas esos envases?",
-        "opciones": [
+        "questionId": 3,
+        "questionKey": "tuReutilizasLosProductos",
+        "description": "¿Reutilizas esos envases?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Si",
-            "peso": -96.2
+            "optionId": 1,
+            "description": "Si",
+            "amount": -96.2
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "No",
-            "peso": 0
+            "optionId": 2,
+            "description": "No",
+            "amount": 0
           }
         ]
       }
     ]
   },
   {
-    "id_categoria": 7,
-    "descripcion_catg": "Energía",
-    "preguntas": [
+    "categoryId": 7,
+    "description": "Energía",
+    "questions": [
       {
-        "id_pregunta": 1,
-        "llavePregunta": "tienesBombillosAhorradoresEnCasa",
-        "descripcion_preg": "¿Tienes bombillos ahorradores en tu casa?",
-        "opciones": [
+        "questionId": 1,
+        "questionKey": "tienesBombillosAhorradoresEnCasa",
+        "description": "¿Tienes bombillos ahorradores en tu casa?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "Si",
-            "peso": 403
+            "optionId": 1,
+            "description": "Si",
+            "amount": 403
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "No",
-            "peso": 672
+            "optionId": 2,
+            "description": "No",
+            "amount": 672
           }
         ]
       },
       {
-        "id_pregunta": 2,
-        "llavePregunta": "cuantasHorasUsasElAire",
-        "descripcion_preg": "¿Cuántas horas usas el aire acondicionado al día?",
-        "opciones": [
+        "questionId": 2,
+        "questionKey": "cuantasHorasUsasElAire",
+        "description": "¿Cuántas horas usas el aire acondicionado al día?",
+        "options": [
           {
-            "correlative": 1,
-            "descripcion_opcion": "1-3hrs",
-            "peso": 672
+            "optionId": 1,
+            "description": "1-3hrs",
+            "amount": 672
           },
           {
-            "correlative": 2,
-            "descripcion_opcion": "3-6hrs",
-            "peso": 1680
+            "optionId": 2,
+            "description": "3-6hrs",
+            "amount": 1680
           },
           {
-            "correlative": 3,
-            "descripcion_opcion": "+7hrs",
-            "peso": 2352
+            "optionId": 3,
+            "description": "+7hrs",
+            "amount": 2352
           },
           {
-            "correlative": 4,
-            "descripcion_opcion": "No uso AC",
-            "peso": 0
+            "optionId": 4,
+            "description": "No uso AC",
+            "amount": 0
           }
         ]
       }

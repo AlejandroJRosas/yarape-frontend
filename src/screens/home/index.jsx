@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 
 import { Button } from '../../components/button'
@@ -40,16 +39,17 @@ export const Home = () => {
               </p>
             </div>
             <div className='flex flex-row items-center justify-center'>
-              <Link to='/form' tabIndex={-1}>
+              <a href='../form'>
                 <Button
                   size={'large'}
                   isEnabled={true}
                   buttonType={'button'}
                   onHome={true}
+                  onClick={() => location.reload}
                 >
                   Empezar!
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

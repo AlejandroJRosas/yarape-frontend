@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
 import { formContext } from './formContext'
 
 export const MyProviders = ({ children }) => {
@@ -11,18 +11,6 @@ export const MyProviders = ({ children }) => {
   const [items, setItems] = useState({})
   const [userHagFP, setUserHagFP] = useState(null)
   const [earthQuantity, setEarthQuantity] = useState(null)
-
-  const resetStateValues = useCallback(() => {
-    setName(null)
-    setIsUcabMember(null)
-    setFootprint(0)
-    setCampusId(null)
-    setRole(null)
-    setCareerId(null)
-    setItems({})
-    setUserHagFP(null)
-    setEarthQuantity(null)
-  }, [])
 
   return (
     <formContext.Provider
@@ -44,8 +32,7 @@ export const MyProviders = ({ children }) => {
         userHagFP,
         setUserHagFP,
         earthQuantity,
-        setEarthQuantity,
-        resetStateValues
+        setEarthQuantity
       }}
     >
       {children}

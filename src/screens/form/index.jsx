@@ -25,6 +25,7 @@ export const Form = () => {
     setEarthQuantity
   } = useContext(formContext)
   const [screenShow, setScreenShow] = useState('personal-form')
+  // const [screenShow, setScreenShow] = useState('result-form')
   const [mood, setMood] = useState(null)
 
   const goToRoleForm = () => {
@@ -96,7 +97,7 @@ export const Form = () => {
     createUser(userCreateData)
     setFootprint(sumaHuella)
     setUserHagFP(conversionHag)
-    setEarthQuantity(cantidadTierras)
+    setEarthQuantity(cantidadTierras.toFixed(1))
     setScreenShow('result-form')
   }
 

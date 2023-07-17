@@ -2,32 +2,11 @@ import { useContext } from 'react'
 import { formContext } from '../../context/formContext'
 import { Button } from '../../components/button'
 import leafBackImg from '../../../assets/categories/leafBack.avif'
-import badImg from '../../../assets/results/bad.png'
-import normalImg from '../../../assets/results/normal.png'
-import goodImg from '../../../assets/results/good.png'
-import earthImg from '../../../assets/results/earth.png'
+import earthImg from '../../../assets/results/world.png'
 import clsx from 'clsx'
 
-const resultados = {
-  bad: {
-    lb1: 'Tu huella es muy alta!',
-    lb2: 'Debes reducirla!',
-    img: badImg
-  },
-  normal: {
-    lb1: 'Tu huella es Promedio!',
-    lb2: 'Pero puedes mejorarla!',
-    img: normalImg
-  },
-  good: {
-    lb1: 'Tu huella es muy baja!',
-    lb2: 'Bien hecho!',
-    img: goodImg
-  }
-}
-
 export const ResultForm = ({ onNext, setMood }) => {
-  const { name, footprint, earthQuantity } = useContext(formContext)
+  const { footprint, earthQuantity } = useContext(formContext)
 
   const range = () => {
     const value = Number((footprint * 0.001).toFixed(2))
@@ -59,28 +38,37 @@ export const ResultForm = ({ onNext, setMood }) => {
           className='bg-cover h-full w-full flex flex-col items-center justify-around text-center'
           style={{ backgroundImage: `url(${leafBackImg})` }}
         >
-          <div className='flex flex-col text-3xl font-semibold w-4/5'>
-            <label>Hemos terminado! {name}</label>
-            <label>Tu huella ecológica es de:</label>
+          <div className='flex flex-col text-2xl md:text-3xl font-semibold w-3/5'>
+            <label>Tu Huella Ecológica es de:</label>
+            <label>{Number((footprint * 0.001).toFixed(2))} Ton de CO2</label>
           </div>
           <div
-            className={clsx('rounded-full w-3/4 text-center', {
-              'bg-red-600': useRange === 'bad',
-              'bg-yellow-600': useRange === 'normal',
-              'bg-GreenPalette': useRange === 'good'
-            })}
+            className={clsx(
+              'flex flex-col bg-opacity-60 rounded-3xl w-11/12 md:w-3/5',
+              {
+                'bg-red-600': useRange === 'bad',
+                'bg-yellow-600': useRange === 'normal',
+                'bg-GreenPalette': useRange === 'good'
+              }
+            )}
           >
-            <label className='text-4xl font-semibold text-white'>
-              {Number((footprint * 0.001).toFixed(2))} Ton de CO2 Cantidad{' '}
-              {earthQuantity}
+            <label className='text-2xl md:text-3xl mt-4 mb-8 font-medium'>
+              Si todas las personas en el mundo consumieran lo mismo que tú se
+              necesitarían
+            </label>
+            <div className='flex flex-row justify-center items-center'>
+              <label className='text-4xl md:text-5xl font-bold mr-4'>
+                {earthQuantity} x
+              </label>
+              <img
+                src={earthImg}
+                className='object-contain w-40 h-40 md:w-48 md:h-48'
+              />
+            </div>
+            <label className='text-2xl md:text-3xl mb-4 mt-8 font-medium'>
+              para mitigar tu huella
             </label>
           </div>
-          <img src={earthImg} />
-          <div className='text-3xl font-bold text-center flex flex-col'>
-            <label>{resultados[useRange].lb1}</label>
-            <label>{resultados[useRange].lb2}</label>
-          </div>
-          <img src={resultados[useRange].img} />
           <form onSubmit={handleSubmit}>
             <Button
               buttonState={null}

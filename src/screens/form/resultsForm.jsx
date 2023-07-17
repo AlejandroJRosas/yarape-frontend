@@ -5,6 +5,7 @@ import leafBackImg from '../../../assets/categories/leafBack.avif'
 import badImg from '../../../assets/results/bad.png'
 import normalImg from '../../../assets/results/normal.png'
 import goodImg from '../../../assets/results/good.png'
+import earthImg from '../../../assets/results/earth.png'
 import clsx from 'clsx'
 
 const resultados = {
@@ -26,7 +27,7 @@ const resultados = {
 }
 
 export const ResultForm = ({ onNext, setMood }) => {
-  const { name, footprint } = useContext(formContext)
+  const { name, footprint, earthQuantity } = useContext(formContext)
 
   const range = () => {
     const value = Number((footprint * 0.001).toFixed(2))
@@ -70,9 +71,11 @@ export const ResultForm = ({ onNext, setMood }) => {
             })}
           >
             <label className='text-4xl font-semibold text-white'>
-              {Number((footprint * 0.001).toFixed(2))} Ton de CO2
+              {Number((footprint * 0.001).toFixed(2))} Ton de CO2 Cantidad{' '}
+              {earthQuantity}
             </label>
           </div>
+          <img src={earthImg} />
           <div className='text-3xl font-bold text-center flex flex-col'>
             <label>{resultados[useRange].lb1}</label>
             <label>{resultados[useRange].lb2}</label>

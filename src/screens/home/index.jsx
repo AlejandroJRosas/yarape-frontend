@@ -39,16 +39,18 @@ export const Home = () => {
                 el ambiente
               </p>
             </div>
-            <Link to='/form' tabIndex={-1}>
-              <Button
-                size={'large'}
-                isEnabled={true}
-                buttonType={'button'}
-                onHome={true}
-              >
-                Empezar!
-              </Button>
-            </Link>
+            <div className='flex flex-row items-center justify-center'>
+              <Link to='/form' tabIndex={-1}>
+                <Button
+                  size={'large'}
+                  isEnabled={true}
+                  buttonType={'button'}
+                  onHome={true}
+                >
+                  Empezar!
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

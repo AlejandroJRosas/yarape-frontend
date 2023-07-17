@@ -1,6 +1,8 @@
 import clsx from 'clsx'
+import { Link } from 'react-router-dom'
 
 import logo from '../../../assets/logo.png'
+import statsImg from '../../../assets/homeAssets/statsButton.png'
 import { ImageComponent } from '../../components/imageComponent'
 
 export const NavBar = () => {
@@ -14,6 +16,13 @@ export const NavBar = () => {
       >
         Yarapë
       </p>
+      <Link
+        to='/stats'
+        tabIndex={-1}
+        className='absolute left-[85%] bottom-[90%] md:bottom-[80%] rounded-full border-2 hover:border-GreenPalette hover:animate-bounce'
+      >
+        <img src={statsImg} className='h-12 w-12 md:h-16 md:w-16' />
+      </Link>
     </div>
   )
 }

@@ -29,7 +29,7 @@ export const Stats = () => {
       const avgStdVsWrkResponse = await getAvgStdVsWrk()
       setAvgStdVsWrk(avgStdVsWrkResponse)
 
-      const q1Response = await getMostPickedOptions(1, 1)
+      const q1Response = await getMostPickedOptions()
       setQ1(q1Response)
     } catch (error) {
       console.log(error)

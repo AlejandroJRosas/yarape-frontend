@@ -35,7 +35,6 @@ export const Form = () => {
   const {
     name,
     isUcabMember,
-    footprint,
     campusId,
     role,
     careerId,
@@ -110,7 +109,7 @@ export const Form = () => {
     const userCreateData = {
       name,
       isUcabMember,
-      footprint: Number((footprint * 0.001).toFixed(2)),
+      footprint: Number((sumaHuella * 0.001).toFixed(2)),
       campusId: isUcabMember ? (campusId === 'guayana' ? 1 : 2) : null,
       role: isUcabMember ? role : null,
       careerId: isUcabMember ? (role === 'T' ? null : Number(careerId)) : null,

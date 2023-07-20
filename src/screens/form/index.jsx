@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { PersonalForm } from './personalForm'
 import { RoleForm } from './roleForm'
 import QuestionsForm from './question-forms'
@@ -6,12 +6,32 @@ import { formContext } from '../../context/formContext'
 import { ResultForm } from './resultsForm'
 import { Recomendations } from './recomendations'
 import createUser from '../../services/postUsers'
+import getAllCareers from '../../services/getAllCareers'
+import getAllQuestions from '../../services/getAllQuestions'
 
 const CO2Equivalente = 3.9
 const HagEquivalente = 1.5
 const TargetHagSustainableRate = 1.6
 
 export const Form = () => {
+  const [careers, setCareers] = useState()
+  const [questions, setQuestions] = useState()
+
+  const fetchAppInfo = async () => {
+    try {
+      const careers = await getAllCareers()
+      setCareers(careers)
+      const questions = await getAllQuestions()
+      setQuestions(questions)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    fetchAppInfo()
+  }, [])
+
   const {
     name,
     isUcabMember,
@@ -81,6 +101,8 @@ export const Form = () => {
       categoriaReciclaCalculo +
       categoriaEnergiaCalculo
 
+    setFootprint(sumaHuella)
+
     const conversionHag = (sumaHuella * 0.001 * HagEquivalente) / CO2Equivalente
 
     const cantidadTierras = conversionHag / TargetHagSustainableRate
@@ -89,13 +111,12 @@ export const Form = () => {
       name,
       isUcabMember,
       footprint: Number((footprint * 0.001).toFixed(2)),
-      campusId: campusId === 'guayana' ? 1 : 2,
-      role,
-      careerId: Number(careerId),
+      campusId: isUcabMember ? (campusId === 'guayana' ? 1 : 2) : null,
+      role: isUcabMember ? role : null,
+      careerId: isUcabMember ? (role === 'T' ? null : Number(careerId)) : null,
       items: items.items
     }
     createUser(userCreateData)
-    setFootprint(sumaHuella)
     setUserHagFP(conversionHag)
     setEarthQuantity(cantidadTierras.toFixed(1))
     setScreenShow('result-form')
@@ -105,11 +126,12 @@ export const Form = () => {
     'personal-form': (
       <PersonalForm onNext={isUcabMember ? goToRoleForm : goToQuestionForm} />
     ),
-    'role-form': <RoleForm onNext={goToQuestionForm} />,
+    'role-form': <RoleForm onNext={goToQuestionForm} careersData={careers} />,
     'question-form': (
       <QuestionsForm
         onFinalQuestion={onFinalQuestion}
         onNext={goToResultForm}
+        questionsData={questions}
       />
     ),
     'result-form': <ResultForm onNext={goToRecomendations} setMood={setMood} />,

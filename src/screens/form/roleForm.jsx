@@ -3,9 +3,9 @@ import clsx from 'clsx'
 import { Button } from '../../components/button'
 import leafBackImg from '../../../assets/categories/leafBack.avif'
 import { formContext } from '../../context/formContext'
-import careersData from '../../json/careers.json'
+// import careersData from '../../json/careers.json'
 
-export const RoleForm = ({ onNext }) => {
+export const RoleForm = ({ onNext, careersData }) => {
   const { role, setRole, campusId, setCampusId, careerId, setCareerId } =
     useContext(formContext)
 

@@ -1,10 +1,10 @@
 import { useState, useContext } from 'react'
 import { formContext } from '../../../context/formContext'
 import QuestionComponent from './question-component'
-import questionsData from '../../../json/preguntas.json'
+// import questionsData from '../../../json/preguntas.json'
 
 const QuestionForms = (props) => {
-  const categories = questionsData
+  const categories = props.questionsData
   const [categoryId, setCategoryId] = useState(1)
   const [questionId, setQuestionId] = useState(1)
   const [userResponse, setUserResponse] = useState({})

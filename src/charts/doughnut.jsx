@@ -6,11 +6,11 @@ ChartJS.register(ArcElement, Tooltip, Legend)
 
 const DoughnutChart = ({ data, label }) => {
   const chartData = {
-    labels: data?.map((item) => item.x),
+    labels: data?.items?.map((item) => item.x + ': ' + item.y),
     datasets: [
       {
         label,
-        data: data?.map((item) => item.y),
+        data: data?.items?.map((item) => item.y),
         backgroundColor,
         borderColor,
         borderWidth: 1

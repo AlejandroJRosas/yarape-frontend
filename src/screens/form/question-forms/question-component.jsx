@@ -127,7 +127,9 @@ const QuestionsForm = (props) => {
                     setSelectedOptionId(option.optionId)
                   }}
                   onForm={true}
-                  className={'mb-4'}
+                  className={
+                    'bg-BluePalette mb-4 hover:bg-blue-500 ring-BluePalette'
+                  }
                   size={'large'}
                 >
                   {option.description}

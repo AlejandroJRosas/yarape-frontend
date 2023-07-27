@@ -112,7 +112,7 @@ export const Form = () => {
       campusId: isUcabMember ? (campusId === 'guayana' ? 1 : 2) : null,
       role: isUcabMember ? role : null,
       careerId: isUcabMember ? (role === 'T' ? null : Number(careerId)) : null,
-      items: _items
+      items: _items.items
     }
     createUser(userCreateData)
     setUserHagFP(conversionHag)

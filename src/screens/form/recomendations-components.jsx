@@ -9,7 +9,7 @@ import clsx from 'clsx'
 const result = {
   bad: [
     {
-      desc: 'Trata de usar medios de transporte eco-amigables',
+      desc: 'Trata de hacer uso de car-sharing, caminar o usar vehículos públicos',
       img: transportImg
     },
     {
@@ -25,7 +25,7 @@ const result = {
       img: shoppingImg
     },
     {
-      desc: 'Trata de hacer uso de bombillos ahorradores',
+      desc: 'Regula el aire acondicionado cuando lo uses',
       img: energyImg
     }
   ],

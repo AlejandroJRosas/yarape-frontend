@@ -8,7 +8,6 @@ export default async function getSurveyedQuantity() {
     const response = await axios.get(URL)
     return response.data
   } catch (error) {
-    console.log(error)
-    throw new Error('Holi')
+    throw new Error('Error de axios')
   }
 }

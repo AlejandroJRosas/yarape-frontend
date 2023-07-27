@@ -8,7 +8,6 @@ export default async function createUser(body) {
     const response = await axios.post(URL, body)
     return response.data
   } catch (error) {
-    console.log(error)
-    throw new Error('Holi')
+    throw new Error('Error de axios')
   }
 }

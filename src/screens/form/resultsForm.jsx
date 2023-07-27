@@ -6,7 +6,7 @@ import earthImg from '../../../assets/results/world.png'
 import clsx from 'clsx'
 
 export const ResultForm = ({ onNext, setMood }) => {
-  const { footprint, earthQuantity } = useContext(formContext)
+  const { footprint, earthQuantity, hag } = useContext(formContext)
 
   const range = () => {
     const value = Number((footprint * 0.001).toFixed(2))
@@ -41,6 +41,7 @@ export const ResultForm = ({ onNext, setMood }) => {
           <div className='flex flex-col text-2xl md:text-3xl font-semibold w-3/5'>
             <label>Tu Huella Ecológica es de:</label>
             <label>{Number((footprint * 0.001).toFixed(2))} Ton de CO2</label>
+            <label>{Number(hag).toFixed(2)} hectáreas equivalentes</label>
           </div>
           <div
             className={clsx(

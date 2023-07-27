@@ -1,7 +1,6 @@
 import { useState, useContext } from 'react'
 import { formContext } from '../../../context/formContext'
 import QuestionComponent from './question-component'
-// import questionsData from '../../../json/preguntas.json'
 
 const QuestionForms = (props) => {
   const categories = props.questionsData
@@ -27,7 +26,7 @@ const QuestionForms = (props) => {
       ...newUserResponse
     })
 
-    const newitems = {
+    const newItems = {
       ...items,
       items: [
         ...(items.items ?? []),
@@ -39,14 +38,13 @@ const QuestionForms = (props) => {
       ]
     }
     setItems({
-      ...newitems
+      ...newItems
     })
 
     const isFinalCategory = category.categoryId === categories.length
     const isFinalQuestion = question.questionId === category.questions.length
 
     if (isFinalCategory && isFinalQuestion) {
-      console.log('sexo')
       props.onFinalQuestion(newUserResponse)
       return
     }

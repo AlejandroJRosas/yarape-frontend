@@ -11,6 +11,7 @@ export const MyProviders = ({ children }) => {
   const [items, setItems] = useState({})
   const [userHagFP, setUserHagFP] = useState(null)
   const [earthQuantity, setEarthQuantity] = useState(null)
+  const [hag, setHag] = useState(null)
 
   return (
     <formContext.Provider
@@ -32,7 +33,9 @@ export const MyProviders = ({ children }) => {
         userHagFP,
         setUserHagFP,
         earthQuantity,
-        setEarthQuantity
+        setEarthQuantity,
+        hag,
+        setHag
       }}
     >
       {children}

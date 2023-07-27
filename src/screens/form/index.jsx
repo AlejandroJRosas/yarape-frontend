@@ -41,7 +41,8 @@ export const Form = () => {
     items,
     setFootprint,
     setUserHagFP,
-    setEarthQuantity
+    setEarthQuantity,
+    setHag
   } = useContext(formContext)
   const [screenShow, setScreenShow] = useState('personal-form')
   // const [screenShow, setScreenShow] = useState('result-form')
@@ -64,7 +65,6 @@ export const Form = () => {
   }
 
   const onFinalQuestion = (data) => {
-    console.log('onFinalQuestions')
     const categoriaViviendaCalculo =
       data['enQueCasaVives'] *
       (data['livingSize'] | 1) *
@@ -103,6 +103,8 @@ export const Form = () => {
     setFootprint(sumaHuella)
 
     const conversionHag = (sumaHuella * 0.001 * HagEquivalente) / CO2Equivalente
+
+    setHag(conversionHag)
 
     const cantidadTierras = conversionHag / TargetHagSustainableRate
 

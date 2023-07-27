@@ -38,7 +38,6 @@ export const Form = () => {
     campusId,
     role,
     careerId,
-    items,
     setFootprint,
     setUserHagFP,
     setEarthQuantity,
@@ -64,7 +63,7 @@ export const Form = () => {
     setScreenShow('recomendations')
   }
 
-  const onFinalQuestion = (data) => {
+  const onFinalQuestion = (data, _items) => {
     const categoriaViviendaCalculo =
       data['enQueCasaVives'] *
       (data['livingSize'] | 1) *
@@ -115,7 +114,7 @@ export const Form = () => {
       campusId: isUcabMember ? (campusId === 'guayana' ? 1 : 2) : null,
       role: isUcabMember ? role : null,
       careerId: isUcabMember ? (role === 'T' ? null : Number(careerId)) : null,
-      items: items.items
+      items: _items.items
     }
     createUser(userCreateData)
     setUserHagFP(conversionHag)

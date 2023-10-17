@@ -45,11 +45,7 @@ const QuestionForms = (props) => {
     const isFinalQuestion = question.questionId === category.questions.length
 
     if (isFinalCategory && isFinalQuestion) {
-<<<<<<< HEAD
-      props.onFinalQuestion(newUserResponse)
-=======
       props.onFinalQuestion(newUserResponse, newItems)
->>>>>>> 87fd7df3673dbb801158247b36cba4aff6ead919
       return
     }
 

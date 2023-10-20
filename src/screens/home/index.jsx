@@ -7,6 +7,7 @@ import h3 from '../../../assets/homeAssets/h3.jpg'
 import { NavBar } from './NavBar'
 import { ImageComponent } from '../../components/imageComponent'
 import homeImagesHash from '../../../assets/homeAssets'
+import { Link } from 'react-router-dom'
 
 export const Home = () => {
   return (
@@ -39,7 +40,7 @@ export const Home = () => {
               </p>
             </div>
             <div className='flex flex-row items-center justify-center'>
-              <a href='../form'>
+              <Link to='/form'>
                 <Button
                   size={'large'}
                   isEnabled={true}
@@ -49,7 +50,7 @@ export const Home = () => {
                 >
                   Empezar!
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
